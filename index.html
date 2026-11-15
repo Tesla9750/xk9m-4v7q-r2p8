@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alstom IS&amp;T | Portal de Handover &amp; Onboarding para Practicantes</title>
+  <meta
+    name="description"
+    content="Guía estática de handover y onboarding para el nuevo practicante de IS&T en Alstom: respaldos, proyecto de monitoreo de red, impresoras, booteo F11/USB y guías de envío."
+  />
+
+  <!-- Google Fonts: Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            alstom: {
+              navy: '#001E62',
+              blue: '#0072CE',
+              cyan: '#00A3E0',
+              red: '#E4002B',
+              slate: '#0F172A'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace']
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="assets/css/styles.css?v=4" />
+</head>
+<body class="bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-100 antialiased transition-colors duration-200">
+  <!-- Mobile Sidebar Overlay -->
+  <div
+    id="sidebar-overlay"
+    class="fixed inset-0 z-30 bg-slate-900/50 backdrop-blur-sm hidden lg:hidden"
+    aria-hidden="true"
+  ></div>
+
+  <div class="flex min-h-screen">
+    <!-- ====================================================================
+         SIDEBAR NAVIGATION
+         ==================================================================== -->
+    <aside
+      id="sidebar"
+      class="fixed inset-y-0 left-0 z-40 w-72 bg-white dark:bg-slate-900 border-r border-slate-200 dark:border-slate-800 transform -translate-x-full lg:translate-x-0 transition-transform duration-200 ease-in-out flex flex-col"
+    >
+      <!-- Brand Logo / Header -->
+      <div class="p-5 border-b border-slate-200 dark:border-slate-800">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-alstom-navy text-white flex items-center justify-center font-extrabold text-lg shadow-sm">
+            IS&amp;T
+          </div>
+          <div>
+            <div class="flex items-center gap-1.5">
+              <span class="font-bold text-slate-900 dark:text-white tracking-tight">ALSTOM</span>
+              <span class="inline-block w-2 h-2 rounded-full bg-alstom-red"></span>
+            </div>
+            <p class="text-xs text-slate-500 dark:text-slate-400 font-medium">Handover &amp; Onboarding</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation Links -->
+      <nav class="flex-1 overflow-y-auto p-4 space-y-1.5" aria-label="Navegación principal">
+        <p class="px-3 text-[11px] font-semibold uppercase tracking-wider text-slate-400 dark:text-slate-500 mb-2">
+          Contenido del Portal
+        </p>
+
+        <a
+          href="#inicio"
+          data-nav-target="inicio"
+          class="nav-link active flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+        >
+          <i data-lucide="layout-dashboard" class="w-4 h-4 shrink-0"></i>
+          <span>Inicio &amp; Bienvenida</span>
+        </a>
+
+        <a
+          href="#checklist"
+          data-nav-target="checklist"
+          class="nav-link flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+        >
+          <i data-lucide="check-square" class="w-4 h-4 shrink-0"></i>
+          <span>Checklist Primeros Días</span>
+        </a>
+
+        <a
+          href="#respaldo"
+          data-nav-target="respaldo"
+          class="nav-link flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+        >
+          <i data-lucide="folder-git-2" class="w-4 h-4 shrink-0"></i>
+          <span>Respaldo &amp; Documentos</span>
+        </a>
+
+        <a
+          href="#monitoreo"
+          data-nav-target="monitoreo"
+          class="nav-link flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+        >
+          <i data-lucide="activity" class="w-4 h-4 shrink-0"></i>
+          <span>Proyecto Monitoreo de Red</span>
+        </a>
+
+        <a
+          href="#guias"
+          data-nav-target="guias"
+          class="nav-link flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+        >
+          <i data-lucide="wrench" class="w-4 h-4 shrink-0"></i>
+          <span>Guías Técnicas</span>
+        </a>
+
+        <a
+          href="#contactos"
+          data-nav-target="contactos"
+          class="nav-link flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+        >
+          <i data-lucide="users" class="w-4 h-4 shrink-0"></i>
+          <span>Contactos &amp; FAQ</span>
+        </a>
+
+        <!-- Quick Shortcuts inside Guides -->
+        <div class="pt-5 mt-4 border-t border-slate-200 dark:border-slate-800">
+          <p class="px-3 text-[11px] font-semibold uppercase tracking-wider text-slate-400 dark:text-slate-500 mb-2">
+            Accesos Directos a Guías
+          </p>
+          <div class="space-y-1">
+            <button
+              type="button"
+              data-jump-guide="como-iniciar"
+              class="w-full text-left flex items-center gap-2.5 px-3 py-1.5 rounded-md text-xs text-slate-600 dark:text-slate-400 hover:text-alstom-blue dark:hover:text-sky-400 hover:bg-slate-100 dark:hover:bg-slate-800/70 transition-colors"
+            >
+              <i data-lucide="rocket" class="w-3.5 h-3.5 shrink-0"></i>
+              <span class="truncate">Cómo iniciar en IS&amp;T</span>
+            </button>
+            <button
+              type="button"
+              data-jump-guide="impresora-general"
+              class="w-full text-left flex items-center gap-2.5 px-3 py-1.5 rounded-md text-xs text-slate-600 dark:text-slate-400 hover:text-alstom-blue dark:hover:text-sky-400 hover:bg-slate-100 dark:hover:bg-slate-800/70 transition-colors"
+            >
+              <i data-lucide="printer" class="w-3.5 h-3.5 shrink-0"></i>
+              <span class="truncate">Impresora Ricoh (Red)</span>
+            </button>
+            <button
+              type="button"
+              data-jump-guide="impresora-etiquetas"
+              class="w-full text-left flex items-center gap-2.5 px-3 py-1.5 rounded-md text-xs text-slate-600 dark:text-slate-400 hover:text-alstom-blue dark:hover:text-sky-400 hover:bg-slate-100 dark:hover:bg-slate-800/70 transition-colors"
+            >
+              <i data-lucide="tag" class="w-3.5 h-3.5 shrink-0"></i>
+              <span class="truncate">Impresora de Etiquetas</span>
+            </button>
+            <button
+              type="button"
+              data-jump-guide="bootear-pc-f11-usb"
+              class="w-full text-left flex items-center gap-2.5 px-3 py-1.5 rounded-md text-xs text-slate-600 dark:text-slate-400 hover:text-alstom-blue dark:hover:text-sky-400 hover:bg-slate-100 dark:hover:bg-slate-800/70 transition-colors"
+            >
+              <i data-lucide="cpu" class="w-3.5 h-3.5 shrink-0"></i>
+              <span class="truncate">Bootear PC (F11 y USB)</span>
+            </button>
+            <button
+              type="button"
+              data-jump-guide="solicitar-guia"
+              class="w-full text-left flex items-center gap-2.5 px-3 py-1.5 rounded-md text-xs text-slate-600 dark:text-slate-400 hover:text-alstom-blue dark:hover:text-sky-400 hover:bg-slate-100 dark:hover:bg-slate-800/70 transition-colors"
+            >
+              <i data-lucide="package" class="w-3.5 h-3.5 shrink-0"></i>
+              <span class="truncate">Paquetería: Guías y Recepción</span>
+            </button>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Sidebar Footer -->
+      <div class="p-4 border-t border-slate-200 dark:border-slate-800 bg-slate-50/70 dark:bg-slate-900/50">
+        <div class="flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
+          <span>GitHub Pages Ready</span>
+          <span class="inline-flex items-center gap-1 text-emerald-600 dark:text-emerald-400 font-medium">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+            Estático
+          </span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- ====================================================================
+         MAIN CONTENT WRAPPER
+         ==================================================================== -->
+    <div class="flex-1 lg:pl-72 flex flex-col min-w-0">
+      <!-- Top Header Bar -->
+      <header class="sticky top-0 z-20 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-3">
+          <!-- Mobile Menu Button -->
+          <button
+            id="mobile-menu-btn"
+            type="button"
+            class="lg:hidden p-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800"
+            aria-label="Abrir menú"
+          >
+            <i data-lucide="menu" class="w-5 h-5"></i>
+          </button>
+
+          <!-- Search Input -->
+          <div class="relative flex-1 max-w-xl">
+            <i
+              data-lucide="search"
+              class="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none"
+            ></i>
+            <input
+              id="global-search"
+              type="text"
+              placeholder="Buscar guía o tema (ej. impresora, F11, etiquetas, monitoreo, guía)..."
+              class="w-full pl-10 pr-16 py-2 text-sm rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/80 text-slate-800 dark:text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-alstom-blue focus:border-transparent transition"
+            />
+            <button
+              id="clear-search-btn"
+              type="button"
+              class="hidden absolute right-2.5 top-1/2 -translate-y-1/2 text-xs px-2 py-0.5 rounded bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-300 dark:hover:bg-slate-600"
+            >
+              Limpiar
+            </button>
+          </div>
+
+          <!-- Header Actions -->
+          <div class="flex items-center gap-2 shrink-0">
+            <button
+              id="toggle-placeholders-btn"
+              type="button"
+              title="Resalta todos los campos genéricos [EDITAR: ...] que puedes personalizar después"
+              class="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-medium border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-amber-50 dark:hover:bg-amber-950/30 hover:border-amber-300 dark:hover:border-amber-700 transition"
+            >
+              <i data-lucide="highlighter" class="w-3.5 h-3.5 text-amber-500"></i>
+              <span class="hidden sm:inline">Resaltar editables</span>
+            </button>
+
+            <button
+              id="toggle-theme-btn"
+              type="button"
+              title="Cambiar tema claro/oscuro"
+              class="p-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-700 transition"
+              aria-label="Cambiar tema"
+            >
+              <i data-lucide="moon" class="w-4 h-4 dark:hidden"></i>
+              <i data-lucide="sun" class="w-4 h-4 hidden dark:block text-amber-400"></i>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <!-- Active Search Banner -->
+      <div
+        id="search-results-banner"
+        class="hidden bg-sky-50 dark:bg-sky-950/40 border-b border-sky-200 dark:border-sky-800 px-4 sm:px-6 lg:px-8 py-2.5"
+      >
+        <div class="max-w-6xl mx-auto flex items-center justify-between text-xs sm:text-sm text-sky-900 dark:text-sky-200">
+          <span id="search-results-text"></span>
+          <button
+            id="banner-clear-search"
+            type="button"
+            class="font-semibold underline hover:text-alstom-blue"
+          >
+            Mostrar todo
+          </button>
+        </div>
+      </div>
+
+      <!-- Main Sections Container -->
+      <main class="flex-1 max-w-6xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-12">
+        <!-- ================================================================
+             1. INICIO & BIENVENIDA
+             ================================================================ -->
+        <section id="inicio" class="scroll-mt-24 space-y-6">
+          <div class="alstom-hero-gradient rounded-2xl p-6 sm:p-8 text-white shadow-lg relative overflow-hidden">
+            <div class="absolute right-0 top-0 -mr-16 -mt-16 w-64 h-64 rounded-full bg-white/5 blur-2xl pointer-events-none"></div>
+            <div class="relative z-10 max-w-3xl space-y-4">
+              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/15 text-xs font-semibold tracking-wide backdrop-blur-sm">
+                <i data-lucide="sparkles" class="w-3.5 h-3.5 text-sky-300"></i>
+                <span>Handover Oficial &bull; Área de IS&amp;T</span>
+              </div>
+
+              <h1 class="text-2xl sm:text-4xl font-extrabold tracking-tight leading-tight">
+                Guía de Bienvenida para el Nuevo Practicante de IS&amp;T
+              </h1>
+
+              <p id="meta-welcome" class="text-sm sm:text-base text-slate-100/90 leading-relaxed"></p>
+
+              <div class="flex flex-wrap gap-3 pt-2 text-xs sm:text-sm">
+                <div class="inline-flex items-center gap-2 bg-white/10 px-3 py-1.5 rounded-lg">
+                  <i data-lucide="map-pin" class="w-4 h-4 text-sky-300"></i>
+                  <span>Sitio: <span id="meta-location"></span></span>
+                </div>
+                <div class="inline-flex items-center gap-2 bg-white/10 px-3 py-1.5 rounded-lg">
+                  <i data-lucide="calendar" class="w-4 h-4 text-sky-300"></i>
+                  <span>Periodo saliente: <span id="meta-period"></span></span>
+                </div>
+                <div class="inline-flex items-center gap-2 bg-white/10 px-3 py-1.5 rounded-lg">
+                  <i data-lucide="user-check" class="w-4 h-4 text-sky-300"></i>
+                  <span>Elaborado por: <span id="meta-outgoing"></span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Summary Metrics -->
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <a
+              href="#checklist"
+              class="group bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-5 hover:border-alstom-blue dark:hover:border-sky-500 transition shadow-sm"
+            >
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
+                  Avance Onboarding
+                </span>
+                <span class="p-2 rounded-lg bg-emerald-50 dark:bg-emerald-950/50 text-emerald-600 dark:text-emerald-400">
+                  <i data-lucide="check-circle-2" class="w-4 h-4"></i>
+                </span>
+              </div>
+              <p id="stat-checklist-progress" class="text-2xl font-bold text-slate-900 dark:text-white mt-2">0%</p>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 group-hover:text-alstom-blue">
+                Ir al checklist interactivo &rarr;
+              </p>
+            </a>
+
+            <a
+              href="#respaldo"
+              class="group bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-5 hover:border-alstom-blue dark:hover:border-sky-500 transition shadow-sm"
+            >
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
+                  Carpetas de Respaldo
+                </span>
+                <span class="p-2 rounded-lg bg-sky-50 dark:bg-sky-950/50 text-alstom-blue dark:text-sky-400">
+                  <i data-lucide="folder-open" class="w-4 h-4"></i>
+                </span>
+              </div>
+              <p id="stat-folders-count" class="text-2xl font-bold text-slate-900 dark:text-white mt-2">5</p>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 group-hover:text-alstom-blue">
+                Scripts, formatos y manuales &rarr;
+              </p>
+            </a>
+
+            <a
+              href="#guias"
+              class="group bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-5 hover:border-alstom-blue dark:hover:border-sky-500 transition shadow-sm"
+            >
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
+                  Guías Operativas
+                </span>
+                <span class="p-2 rounded-lg bg-indigo-50 dark:bg-indigo-950/50 text-indigo-600 dark:text-indigo-400">
+                  <i data-lucide="book-marked" class="w-4 h-4"></i>
+                </span>
+              </div>
+              <p id="stat-guides-count" class="text-2xl font-bold text-slate-900 dark:text-white mt-2">5</p>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 group-hover:text-alstom-blue">
+                Impresoras, F11/USB y paquetería &rarr;
+              </p>
+            </a>
+          </div>
+
+          <!-- Info Alert on Editable Placeholders -->
+          <div class="bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-800/70 rounded-xl p-4 flex items-start gap-3">
+            <i data-lucide="info" class="w-5 h-5 text-amber-600 dark:text-amber-400 shrink-0 mt-0.5"></i>
+            <div class="text-xs sm:text-sm text-amber-900 dark:text-amber-200 space-y-1">
+              <p class="font-semibold">Base lista para personalizar por secciones</p>
+              <p>
+                Los campos marcados como <span class="editable-placeholder">[EDITAR: ...]</span> contienen información genérica de ejemplo.
+                Usa el botón superior <strong>"Resaltar editables"</strong> para ubicarlos rápido cuando vayas completando las rutas, nombres de repositorios o datos internos en <code>assets/js/guides-data.js</code>.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================================================================
+             2. CHECKLIST DE ONBOARDING
+             ================================================================ -->
+        <section id="checklist" class="scroll-mt-24 space-y-5">
+          <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+            <div>
+              <span class="text-xs font-bold uppercase tracking-wider text-alstom-blue dark:text-sky-400">
+                Primeros Pasos
+              </span>
+              <h2 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white mt-0.5">
+                Checklist Interactivo de Onboarding
+              </h2>
+              <p class="text-sm text-slate-600 dark:text-slate-400 mt-1">
+                Marca cada actividad conforme avances. Tu progreso se guarda automáticamente en este navegador.
+              </p>
+            </div>
+
+            <button
+              id="reset-checklist-btn"
+              type="button"
+              class="self-start sm:self-auto inline-flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition"
+            >
+              <i data-lucide="rotate-ccw" class="w-3.5 h-3.5"></i>
+              Reiniciar progreso
+            </button>
+          </div>
+
+          <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 sm:p-6 shadow-sm space-y-5">
+            <!-- Progress Bar -->
+            <div class="space-y-2">
+              <div class="flex items-center justify-between text-xs sm:text-sm font-medium">
+                <span class="text-slate-600 dark:text-slate-300">Progreso general de incorporación</span>
+                <span id="checklist-progress-text" class="font-bold text-alstom-blue dark:text-sky-400">0 de 0 completadas</span>
+              </div>
+              <div class="w-full h-2.5 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+                <div
+                  id="checklist-progress-bar"
+                  class="h-full bg-alstom-blue dark:bg-sky-500 rounded-full transition-all duration-300"
+                  style="width: 0%"
+                ></div>
+              </div>
+            </div>
+
+            <!-- Phase Filter Tabs -->
+            <div id="checklist-phase-tabs" class="flex flex-wrap gap-2">
+              <button type="button" data-phase="Todas" class="phase-tab active px-3 py-1.5 rounded-lg text-xs font-semibold bg-alstom-navy text-white">
+                Todas
+              </button>
+              <button type="button" data-phase="Día 1" class="phase-tab px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700">
+                Día 1
+              </button>
+              <button type="button" data-phase="Semana 1" class="phase-tab px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700">
+                Semana 1
+              </button>
+              <button type="button" data-phase="Mes 1" class="phase-tab px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700">
+                Mes 1
+              </button>
+            </div>
+
+            <!-- Checklist Items -->
+            <div id="checklist-container" class="divide-y divide-slate-100 dark:divide-slate-800"></div>
+          </div>
+        </section>
+
+        <!-- ================================================================
+             3. RESPALDO DE ACTIVIDADES & DOCUMENTOS
+             ================================================================ -->
+        <section id="respaldo" class="scroll-mt-24 space-y-5">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-wider text-alstom-blue dark:text-sky-400">
+              Repositorio &amp; Archivos
+            </span>
+            <h2 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white mt-0.5">
+              Respaldo de Actividades y Documentación Clave
+            </h2>
+            <p id="backup-summary" class="text-sm text-slate-600 dark:text-slate-400 mt-1"></p>
+          </div>
+
+          <!-- Access Location Cards -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-4 space-y-1.5 shadow-sm">
+              <div class="flex items-center gap-2 text-xs font-semibold text-slate-500 dark:text-slate-400">
+                <i data-lucide="github" class="w-4 h-4 text-slate-700 dark:text-slate-200"></i>
+                <span>Repositorio GitHub</span>
+              </div>
+              <p id="backup-repo-slug" class="text-sm font-mono font-medium text-slate-800 dark:text-slate-100 break-all"></p>
+              <p id="backup-github-url" class="text-xs text-slate-500 dark:text-slate-400 break-all"></p>
+            </div>
+
+            <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-4 space-y-1.5 shadow-sm">
+              <div class="flex items-center gap-2 text-xs font-semibold text-slate-500 dark:text-slate-400">
+                <i data-lucide="cloud" class="w-4 h-4 text-alstom-blue"></i>
+                <span>Carpeta en la Nube (SharePoint / OneDrive)</span>
+              </div>
+              <p id="backup-cloud-url" class="text-sm font-medium text-slate-800 dark:text-slate-100 break-all"></p>
+            </div>
+
+            <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-4 space-y-1.5 shadow-sm">
+              <div class="flex items-center gap-2 text-xs font-semibold text-slate-500 dark:text-slate-400">
+                <i data-lucide="server" class="w-4 h-4 text-emerald-600"></i>
+                <span>Ruta Local / Servidor de Archivos</span>
+              </div>
+              <p id="backup-local-path" class="text-sm font-mono font-medium text-slate-800 dark:text-slate-100 break-all"></p>
+            </div>
+          </div>
+
+          <!-- Folder Structure Grid -->
+          <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 sm:p-6 shadow-sm space-y-4">
+            <h3 class="text-base font-bold text-slate-900 dark:text-white flex items-center gap-2">
+              <i data-lucide="folder-tree" class="w-4 h-4 text-alstom-blue"></i>
+              Estructura de Carpetas del Respaldo
+            </h3>
+            <div id="backup-folders-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+          </div>
+
+          <!-- Key Documents -->
+          <div class="space-y-3">
+            <h3 class="text-base font-bold text-slate-900 dark:text-white flex items-center gap-2">
+              <i data-lucide="file-text" class="w-4 h-4 text-alstom-blue"></i>
+              Documentos que más te ayudarán
+            </h3>
+            <div id="backup-docs-grid" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+          </div>
+        </section>
+
+        <!-- ================================================================
+             4. PROYECTO DE MONITOREO DE RED & ACCESO A REPO PRIVADO
+             ================================================================ -->
+        <section id="monitoreo" class="scroll-mt-24 space-y-5">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-wider text-alstom-blue dark:text-sky-400">
+              Proyecto Principal Entregado
+            </span>
+            <div class="flex flex-wrap items-center gap-3 mt-0.5">
+              <h2 id="net-title" class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white"></h2>
+              <span
+                id="net-status"
+                class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-amber-100 dark:bg-amber-950/60 text-amber-800 dark:text-amber-300 border border-amber-200 dark:border-amber-800"
+              ></span>
+            </div>
+          </div>
+
+          <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 sm:p-6 shadow-sm space-y-6">
+            <!-- Project Overview & Metadata -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+              <div class="lg:col-span-2 space-y-4">
+                <p id="net-overview" class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed"></p>
+
+                <div class="space-y-2">
+                  <h3 class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">
+                    ¿Qué monitorea?
+                  </h3>
+                  <ul id="net-assets-list" class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm text-slate-700 dark:text-slate-300"></ul>
+                </div>
+
+                <div class="space-y-2">
+                  <h3 class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">
+                    Tecnologías / Stack
+                  </h3>
+                  <div id="net-stack-badges" class="flex flex-wrap gap-2"></div>
+                </div>
+              </div>
+
+              <div class="bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 rounded-xl p-4 space-y-3 self-start">
+                <div class="flex items-center gap-2 text-sm font-bold text-slate-900 dark:text-white">
+                  <i data-lucide="lock" class="w-4 h-4 text-alstom-red"></i>
+                  <span>Datos del Repositorio Privado</span>
+                </div>
+                <div class="space-y-2 text-xs">
+                  <div>
+                    <span class="text-slate-500 dark:text-slate-400 block">Repositorio:</span>
+                    <span id="net-repo-slug" class="font-mono font-semibold text-slate-800 dark:text-slate-100 break-all"></span>
+                  </div>
+                  <div>
+                    <span class="text-slate-500 dark:text-slate-400 block">Aprobador / Owner:</span>
+                    <span id="net-owner" class="font-medium text-slate-800 dark:text-slate-100"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Access Request Steps -->
+            <div class="pt-5 border-t border-slate-200 dark:border-slate-800 space-y-4">
+              <h3 class="text-base font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                <i data-lucide="key-round" class="w-4 h-4 text-alstom-blue"></i>
+                Cómo Solicitar Permiso y Acceder al Repositorio Privado
+              </h3>
+              <div id="net-access-steps" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+            </div>
+
+            <!-- Template & Setup Commands -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-5 pt-2">
+              <!-- Email/Teams Template -->
+              <div class="space-y-2">
+                <div class="flex items-center justify-between">
+                  <h4 class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">
+                    Plantilla para Solicitar Acceso (Correo / Teams)
+                  </h4>
+                  <button
+                    id="copy-template-btn"
+                    type="button"
+                    class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-medium bg-alstom-blue text-white hover:bg-alstom-navy transition"
+                  >
+                    <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+                    Copiar plantilla
+                  </button>
+                </div>
+                <pre
+                  id="net-request-template"
+                  class="text-xs font-mono bg-slate-900 text-slate-100 p-4 rounded-xl overflow-x-auto whitespace-pre-wrap leading-relaxed border border-slate-800"
+                ></pre>
+              </div>
+
+              <!-- Git Clone & Setup Commands -->
+              <div class="space-y-2">
+                <div class="flex items-center justify-between">
+                  <h4 class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">
+                    Comandos Iniciales una vez Aprobado
+                  </h4>
+                  <button
+                    id="copy-setup-btn"
+                    type="button"
+                    class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-medium bg-slate-800 dark:bg-slate-700 text-white hover:bg-slate-700 dark:hover:bg-slate-600 transition"
+                  >
+                    <i data-lucide="terminal" class="w-3.5 h-3.5"></i>
+                    Copiar comandos
+                  </button>
+                </div>
+                <pre
+                  id="net-setup-commands"
+                  class="text-xs font-mono bg-slate-900 text-emerald-300 p-4 rounded-xl overflow-x-auto whitespace-pre leading-relaxed border border-slate-800"
+                ></pre>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================================================================
+             5. GUÍAS TÉCNICAS PASO A PASO
+             ================================================================ -->
+        <section id="guias" class="scroll-mt-24 space-y-5">
+          <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+            <div>
+              <span class="text-xs font-bold uppercase tracking-wider text-alstom-blue dark:text-sky-400">
+                Manual Operativo
+              </span>
+              <h2 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white mt-0.5">
+                Guías Técnicas y Procedimientos Frecuentes
+              </h2>
+              <p class="text-sm text-slate-600 dark:text-slate-400 mt-1">
+                Haz clic en cualquier guía para desplegar los pasos detallados, comandos y solución de errores.
+              </p>
+            </div>
+
+            <div class="flex items-center gap-2 shrink-0 no-print">
+              <button
+                id="expand-all-guides-btn"
+                type="button"
+                class="px-3 py-1.5 rounded-lg text-xs font-medium border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 hover:bg-slate-100 dark:hover:bg-slate-800 transition"
+              >
+                Expandir todas
+              </button>
+              <button
+                id="collapse-all-guides-btn"
+                type="button"
+                class="px-3 py-1.5 rounded-lg text-xs font-medium border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 hover:bg-slate-100 dark:hover:bg-slate-800 transition"
+              >
+                Colapsar todas
+              </button>
+            </div>
+          </div>
+
+          <!-- Category Filter Pills -->
+          <div id="guide-category-filters" class="flex flex-wrap gap-2 no-print">
+            <button type="button" data-category="Todas" class="guide-filter-btn active px-3.5 py-1.5 rounded-full text-xs font-semibold bg-alstom-navy text-white transition">
+              Todas
+            </button>
+            <button type="button" data-category="Onboarding" class="guide-filter-btn px-3.5 py-1.5 rounded-full text-xs font-semibold bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:border-alstom-blue transition">
+              Onboarding
+            </button>
+            <button type="button" data-category="Hardware & Impresoras" class="guide-filter-btn px-3.5 py-1.5 rounded-full text-xs font-semibold bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:border-alstom-blue transition">
+              Hardware &amp; Impresoras
+            </button>
+            <button type="button" data-category="Sistemas & Booteo" class="guide-filter-btn px-3.5 py-1.5 rounded-full text-xs font-semibold bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:border-alstom-blue transition">
+              Sistemas &amp; Booteo
+            </button>
+            <button type="button" data-category="Logística & Procesos" class="guide-filter-btn px-3.5 py-1.5 rounded-full text-xs font-semibold bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:border-alstom-blue transition">
+              Logística &amp; Procesos
+            </button>
+          </div>
+
+          <!-- Guides Accordion List -->
+          <div id="guides-container" class="space-y-4"></div>
+
+          <!-- Empty State for Search -->
+          <div
+            id="guides-empty-state"
+            class="hidden bg-white dark:bg-slate-900 border border-dashed border-slate-300 dark:border-slate-700 rounded-2xl p-8 text-center space-y-2"
+          >
+            <i data-lucide="search-x" class="w-8 h-8 text-slate-400 mx-auto"></i>
+            <p class="text-sm font-semibold text-slate-700 dark:text-slate-200">
+              No se encontraron guías que coincidan con tu filtro o búsqueda.
+            </p>
+            <p class="text-xs text-slate-500 dark:text-slate-400">
+              Intenta con palabras clave como "impresora", "F11", "USB", "etiquetas" o "guía".
+            </p>
+          </div>
+        </section>
+
+        <!-- ================================================================
+             6. CONTACTOS & PREGUNTAS FRECUENTES
+             ================================================================ -->
+        <section id="contactos" class="scroll-mt-24 space-y-6">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-wider text-alstom-blue dark:text-sky-400">
+              Directorio &amp; Ayuda Rápida
+            </span>
+            <h2 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white mt-0.5">
+              Roles de Escalación y Preguntas Frecuentes
+            </h2>
+            <p class="text-sm text-slate-600 dark:text-slate-400 mt-1">
+              Por seguridad y privacidad al ser un sitio público en GitHub Pages, aquí se muestra únicamente el rol y su alcance. Los nombres, correos y extensiones asignados se encuentran dentro del repositorio privado de respaldo (<code class="font-mono text-xs">02-Documentacion-Procesos/</code>).
+            </p>
+          </div>
+
+          <!-- Contacts Table -->
+          <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden shadow-sm">
+            <div class="overflow-x-auto">
+              <table class="w-full text-left border-collapse">
+                <thead>
+                  <tr class="bg-slate-50 dark:bg-slate-800/80 border-b border-slate-200 dark:border-slate-800 text-xs uppercase tracking-wider text-slate-500 dark:text-slate-400">
+                    <th class="py-3.5 px-5 font-semibold w-1/3">Rol / Área</th>
+                    <th class="py-3.5 px-5 font-semibold">Cuándo acudir</th>
+                  </tr>
+                </thead>
+                <tbody id="contacts-table-body" class="divide-y divide-slate-100 dark:divide-slate-800 text-sm"></tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- FAQs -->
+          <div class="space-y-3">
+            <h3 class="text-base font-bold text-slate-900 dark:text-white flex items-center gap-2">
+              <i data-lucide="help-circle" class="w-4 h-4 text-alstom-blue"></i>
+              Preguntas Frecuentes (FAQ)
+            </h3>
+            <div id="faq-container" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+          </div>
+        </section>
+      </main>
+
+      <!-- Footer -->
+      <footer class="border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 mt-12">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500 dark:text-slate-400">
+          <p>
+            Portal de Handover IS&amp;T &bull; Alstom &bull; Última actualización: <span id="footer-updated"></span>
+          </p>
+          <p>
+            Elaborado para transición de practicantes por <span id="footer-author"></span>
+          </p>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div
+    id="toast-notification"
+    class="hide fixed bottom-5 right-5 z-50 flex items-center gap-2.5 px-4 py-3 rounded-xl bg-slate-900 dark:bg-slate-800 text-white text-xs sm:text-sm font-medium shadow-xl border border-slate-700"
+    role="status"
+    aria-live="polite"
+  >
+    <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400 shrink-0"></i>
+    <span id="toast-message">¡Copiado al portapapeles!</span>
+  </div>
+
+  <!-- Data & Application Scripts -->
+  <script src="assets/js/guides-data.js?v=4"></script>
+  <script src="assets/js/app.js?v=4"></script>
+</body>
+</html>
