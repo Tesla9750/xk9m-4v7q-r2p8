@@ -31,9 +31,9 @@ window.HANDOVER_DATA = {
     {
       id: "chk-1",
       phase: "Día 1",
-      title: "Recibir laptop corporativa, credenciales de red y gafete",
+      title: "Recibir laptop, iniciar su configuración y explorar el sistema",
       description:
-        'Verificar inicio de sesión en Windows, acceso a correo Outlook y Microsoft Teams junto con tu jefe directo (<strong>Local Operations Specialist</strong>: <span class="editable-placeholder">[EDITAR: Nombre]</span>) y el <strong>OSS Engineer</strong>.',
+        "Verificar inicio de sesión en Windows, acceso a correo Outlook y Microsoft Teams junto con tu jefe directo (<strong>Local Operations Specialist</strong>) o el <strong>OSS Engineer</strong>.",
       tag: "Accesos"
     },
     {
@@ -41,55 +41,79 @@ window.HANDOVER_DATA = {
       phase: "Día 1",
       title: "Validar conexión / Zscaler y herramientas base",
       description:
-        "Confirmar acceso a la red interna, algunos sitios dentro de la intranet corporativa y Microsoft Teams.",
+        "Confirmar acceso a la red interna, algunos sitios dentro de la intranet corporativa y otras herramientas del sistema.",
       tag: "Red & Seguridad"
     },
     {
       id: "chk-3",
       phase: "Día 1",
-      title: "Recorrido físico por áreas clave de IS&T y presentación del equipo",
+      title: "Instalación de aplicación para la impresión de documentos",
       description:
-        'Ubicar el cuarto de servidores (Site), bodega de resguardo de equipos y zonas de impresión junto con el <strong>OSS Engineer</strong>; presentarte con el <strong>Ricoh Printer Specialist</strong> y conocer los canales con los <strong>IS&amp;T Project Managers</strong>.',
-      tag: "Sitio"
+        "Entrar a la tienda de aplicaciones corporativas e instalar <strong>Equitrac Client</strong> para habilitar el envío e impresión de documentos.",
+      tag: "Impresión"
     },
     {
       id: "chk-4",
-      phase: "Semana 1",
-      title: "Explorar el Repositorio / Carpeta de Respaldo IS&T",
+      phase: "Día 1",
+      title: "Conocer al equipo de IS&T",
       description:
-        "Descargar o marcar en favoritos los manuales, scripts de soporte rápido, drivers y formatos de responsiva documentados en la sección de Respaldo.",
-      tag: "Documentación"
+        "Presentarte con el <strong>Local Operations Specialist</strong>, el <strong>OSS Engineer</strong>, el <strong>Ricoh Printer Specialist</strong> y los <strong>IS&amp;T Project Managers</strong> para ubicarte en la dinámica del área.",
+      tag: "Equipo"
     },
     {
       id: "chk-5",
       phase: "Semana 1",
-      title: "Solicitar acceso al repositorio privado de Monitoreo de Red",
+      title: "Recorrido físico por áreas clave de IS&T y racks de red",
       description:
-        "Crear o usar tu cuenta de GitHub autorizada y enviar la solicitud de acceso al <strong>Local Operations Specialist</strong> siguiendo la plantilla de la sección de Monitoreo.",
-      tag: "GitHub"
+        "Ubicar el cuarto de servidores (Site), la bodega de resguardo de equipos y —dependiendo de las circunstancias de la semana o el día— conocer algunos de los equipos de red y los diferentes racks junto con el <strong>Local Operations Specialist</strong> o, en su caso, con el <strong>OSS Engineer</strong>.",
+      tag: "Sitio & Red"
+    },
+    {
+      id: "chk-10",
+      phase: "Semana 1",
+      title: "Solicitar la llave del área de IS&T",
+      description:
+        "Gestionar con el <strong>Local Operations Specialist</strong> la entrega de la llave del área para contar con acceso autónomo a la oficina y zonas de resguardo.",
+      tag: "Accesos"
+    },
+    {
+      id: "chk-11",
+      phase: "Semana 1",
+      title: "Ubicar stock de periféricos, etiquetas (Asset Tags) y llaves",
+      description:
+        "Identificar dónde se almacenan teclados, mouse, diademas, cables de red, cargadores, dockings, maletines, consumibles y etiquetas de activo (Asset Tags).",
+      tag: "Inventario"
+    },
+    {
+      id: "chk-12",
+      phase: "Semana 1",
+      title: "Aprender el proceso de entrega y devolución de equipos (Altas y Bajas)",
+      description:
+        "Dominar el checklist al entregar equipo a un usuario nuevo o al recibir equipo por baja: revisión física completa, cargador, docking, maletín y llenado/firma de responsiva.",
+      tag: "Operación"
     },
     {
       id: "chk-6",
       phase: "Semana 1",
-      title: "Probar instalación de impresora Ricoh e impresora de etiquetas",
+      title: "Probar impresión en Ricoh (Equitrac) e impresora de etiquetas",
       description:
-        "Realizar una prueba real de impresión en red en equipos Ricoh (coordinando cualquier detalle físico con el <strong>Ricoh Printer Specialist</strong>) y una calibración en la impresora térmica de etiquetas.",
+        "Realizar una prueba real de impresión usando <strong>Equitrac Client</strong> en equipos Ricoh (coordinando cualquier detalle físico con el <strong>Ricoh Printer Specialist</strong>) y una calibración en la impresora térmica de etiquetas.",
       tag: "Hardware"
     },
     {
       id: "chk-7",
       phase: "Semana 1",
-      title: "Realizar un booteo de práctica (F11 PXE y USB)",
+      title: "Realizar práctica de booteo por USB (F9) y restablecimiento local (F11)",
       description:
-        "Acompañado por el <strong>OSS Engineer</strong>, identificar las memorias USB de soporte vigentes y confirmar el arranque por red (F11) en un equipo de pruebas antes de atender un ticket real.",
+        "Acompañado por el <strong>OSS Engineer</strong>, identificar las memorias USB de soporte vigentes para practicar el booteo con <strong>F9</strong>, y probar el restablecimiento sin memoria mediante <strong>F11</strong> (el cual restaura con los datos locales y en ocasiones solicita un código que debes pedir al <strong>OSS Engineer</strong> proporcionando los datos del equipo).",
       tag: "Sistemas"
     },
     {
       id: "chk-8",
       phase: "Mes 1",
-      title: "Gestionar paquetería: envío con guía y reporte de equipos recibidos",
+      title: "Gestionar envíos de equipos (cómputo, teléfonos) y reporte de recepciones",
       description:
-        "Acompañar o ejecutar el proceso completo de empaque y solicitud de guía, así como verificar activos que llegan por paquetería y reportarlos a los <strong>IS&amp;T Project Managers</strong>.",
+        "Acompañar o ejecutar el proceso completo de empaque y solicitud de guía para envíos de equipos de cómputo, teléfonos celulares o periféricos, así como verificar activos que llegan por paquetería y reportarlos a los <strong>IS&amp;T Project Managers</strong>.",
       tag: "Logística"
     },
     {
@@ -97,7 +121,7 @@ window.HANDOVER_DATA = {
       phase: "Mes 1",
       title: "Documentar nuevos hallazgos o mejoras",
       description:
-        "Si cambia alguna ruta de servidor, contraseña genérica de driver o procedimiento interno, actualizar este portal o el repositorio de respaldo.",
+        "Si cambia alguna ruta de servidor, procedimiento interno o tip útil, actualizar este portal o el repositorio de respaldo.",
       tag: "Mejora Continua"
     }
   ],
@@ -193,15 +217,16 @@ window.HANDOVER_DATA = {
    */
   networkProject: {
     title: "Proyecto de Monitoreo de Red Local",
-    status: "Repositorio Privado en GitHub",
+    status: "Repositorio Privado (Acceso Opcional)",
     repoSlug: '<span class="editable-placeholder">[EDITAR: usuario-o-org/ist-network-monitor]</span>',
-    ownerRole: 'Local Operations Specialist (<span class="editable-placeholder">[EDITAR: Nombre]</span>) / Juan de Dios Benitez Nava',
+    ownerRole:
+      'Juan de Dios Benitez Nava (<span class="editable-placeholder">[EDITAR: tu.correo.contacto@ejemplo.com]</span>) &bull; Respaldo original',
     overview:
-      "Proyecto desarrollado durante mi periodo en IS&T con el objetivo de supervisar en tiempo real la disponibilidad, latencia y estado de equipos críticos de la red local (switches, puntos de acceso, impresoras de planta/oficina y enlaces principales), permitiendo detectar caídas antes de que el usuario levante un ticket.",
+      "Proyecto desarrollado durante mi periodo en IS&T para supervisar la disponibilidad, latencia y estado de equipos críticos de la red local (switches, access points, impresoras y enlaces principales). Nota importante: solicitar permiso al código fuente es completamente opcional; está pensado para practicantes que deseen realizar mejoras o actualizaciones a nivel código. La copia original permanece bajo mi resguardo para gestionar accesos y futuras actualizaciones.",
     monitoredAssets: [
-      "Switches de acceso y distribución (MDF / IDFs)",
-      "Access Points Wi-Fi de áreas operativas y oficinas",
-      "Impresoras de red y estaciones de etiquetado críticas",
+      "Switches de acceso y distribución (Site / Racks)",
+      "Access Points Wi-Fi (ej. Catalyst 9100 Series)",
+      "Impresoras de red y estaciones críticas",
       "Gateways, enlaces ISP y servidores locales"
     ],
     techStack: [
@@ -213,45 +238,45 @@ window.HANDOVER_DATA = {
     accessSteps: [
       {
         step: 1,
-        title: "Prepara tu cuenta de GitHub",
+        title: "Evalúa si necesitas acceso a nivel código (Opcional)",
         detail:
-          'Asegúrate de tener una cuenta activa en GitHub (preferentemente vinculada o autorizada con tu correo corporativo de Alstom o autorizada por tu tutor). Ten a la mano tu nombre de usuario exacto (ej. <code>@tu-usuario</code>).'
+          "Si únicamente utilizarás la herramienta en operación diaria no necesitas tocar el repositorio. Si deseas estudiar el código, adaptarlo o proponer mejoras, sigue los pasos siguientes."
       },
       {
         step: 2,
-        title: "Envía la solicitud formal de acceso",
+        title: "Solicita el acceso al practicante saliente",
         detail:
-          'Contacta por correo o Microsoft Teams a tu jefe directo — el <strong>Local Operations Specialist</strong> (<span class="editable-placeholder">[EDITAR: Nombre]</span>) — con copia al practicante saliente si aún está en transición, usando la plantilla de solicitud de abajo.'
+          'Envía un correo a <strong>Juan de Dios Benitez Nava</strong> (<span class="editable-placeholder">[EDITAR: tu.correo.contacto@ejemplo.com]</span>) con tu usuario de GitHub (ej. <code>@tu-usuario</code>) usando la plantilla inferior, e informa también a tu <strong>Local Operations Specialist</strong> si realizarás actualizaciones para el área.'
       },
       {
         step: 3,
-        title: "Acepta la invitación del repositorio",
+        title: "Acepta la invitación en GitHub",
         detail:
-          'Una vez aprobado, GitHub enviará un correo de invitación. También puedes aceptarla directamente entrando a <code>github.com/notifications</code>. Se recomienda asignarte permisos de lectura/escritura (<strong>Write / Maintain</strong>) si continuarás manteniéndolo.'
+          'Una vez revisada tu solicitud, recibirás una invitación al repositorio privado (también visible en <code>github.com/notifications</code>) para consultar o colaborar mediante ramas/Pull Requests sobre la copia original.'
       },
       {
         step: 4,
         title: "Clona y configura el entorno local",
         detail:
-          'Configura tu clave SSH o Personal Access Token (PAT) en Git para clonar repositorios privados, revisa el archivo <code>README.md</code> interno y crea tu archivo <code>.env</code> a partir de <code>.env.example</code> (nunca subas credenciales al repo).'
+          'Configura tu clave SSH o Personal Access Token (PAT) en Git para clonar el repositorio privado, lee el <code>README.md</code> interno y crea tu archivo <code>.env</code> desde <code>.env.example</code> (nunca subas credenciales al repo).'
       }
     ],
-    requestTemplate: `Asunto: Solicitud de acceso a repositorio privado - Proyecto Monitoreo de Red IS&T
+    requestTemplate: `Asunto: Solicitud opcional de acceso a repositorio - Proyecto Monitoreo de Red IS&T
 
-Hola [EDITAR: Nombre del Local Operations Specialist],
+Hola Juan de Dios,
 
-Espero que estés teniendo un excelente día.
+Espero que estés muy bien.
 
-Como parte de mi incorporación como practicante en el área de IS&T en Alstom (SHGB), estoy revisando la documentación de handover y requiero acceso al repositorio privado del Proyecto de Monitoreo de Red para poder darle seguimiento y mantenimiento.
+Actualmente soy el nuevo practicante de IS&T en Alstom (SHGB) y me gustaría revisar/actualizar el código del Proyecto de Monitoreo de Red.
 
-Mis datos de GitHub son:
+Mis datos para la invitación en GitHub son:
 - Nombre completo: [EDITAR: Tu Nombre Completo]
 - Correo Alstom: [EDITAR: tu.nombre@alstomgroup.com]
 - Usuario de GitHub: @[EDITAR: tu-usuario-github]
 - Repositorio solicitado: [EDITAR: usuario-o-org/ist-network-monitor]
-- Nivel de permiso sugerido: [Write / Read]
+- Motivo / Mejora planeada: [EDITAR: Ej. Mantenimiento / Agregar nuevos equipos]
 
-Quedo atento a tu aprobación e invitación. ¡Muchas gracias!
+Quedo atento a tu respuesta. ¡Muchas gracias!
 
 Saludos,
 [EDITAR: Tu Nombre]
@@ -301,9 +326,9 @@ cp .env.example .env`
 Get-CimInstance Win32_Bios | Select-Object SerialNumber, SMBIOSBIOSVersion`
         },
         {
-          title: "3. Verifica el flujo de préstamos y entregas (Responsivas)",
+          title: "3. Verifica el flujo de entregas, bajas y envíos (Responsivas)",
           description:
-            'Nunca entregues una laptop, monitor, diadema o cargador sin registrarlo en la hoja de inventario y generar su responsiva en <span class="editable-placeholder">[EDITAR: Carpeta 03-Plantillas-Formatos / Portal de Activos]</span>.'
+            'Nunca entregues o envíes una laptop, teléfono corporativo, docking, maletín, monitor o cargador sin validar sus accesorios físicos, registrarlo en el control de inventario y generar su responsiva en <span class="editable-placeholder">[EDITAR: Carpeta 03-Plantillas-Formatos / Portal de Activos]</span>.'
         },
         {
           title: "4. Escala a tiempo cuando un problema salga de tu alcance",
@@ -324,41 +349,43 @@ Get-CimInstance Win32_Bios | Select-Object SerialNumber, SMBIOSBIOSVersion`
       difficulty: "Básico",
       estimatedTime: "10 min",
       summary:
-        "Procedimiento estándar para conectar impresoras multifuncionales Ricoh en Windows mediante servidor de impresión o IP estática, y saber cuándo escalar al Ricoh Printer Specialist.",
+        "Procedimiento estándar para habilitar la impresión corporativa con Equitrac Client y conectar impresoras multifuncionales Ricoh en Windows, sabiendo cuándo escalar al Ricoh Printer Specialist.",
       prerequisites: [
+        "Aplicación <strong>Equitrac Client</strong> instalada desde la tienda de aplicaciones corporativas.",
         "Dirección IP de la impresora Ricoh o ruta del servidor de impresión (<span class=\"editable-placeholder\">[EDITAR: \\\\servidor-impresion\\nombre-cola]</span>).",
         "Equipo del usuario conectado a la red corporativa (LAN o Wi-Fi interno, no red de invitados).",
         "Driver Ricoh PCL6 / Universal Print Driver disponible en la carpeta de respaldo (si se instala por IP directa)."
       ],
       steps: [
         {
-          title: "1. Verificar conectividad hacia la impresora Ricoh",
+          title: "1. Instalar Equitrac Client desde la tienda corporativa",
           description:
-            "Antes de instalar, confirma desde la computadora del usuario que existe comunicación de red hacia la IP de la impresora y valida en pantalla física que el equipo esté encendido y sin alertas críticas.",
+            "Antes de configurar impresoras en el equipo, entra a la tienda de aplicaciones corporativas (<strong>Company Portal / Software Center</strong>) en Windows e instala <strong>Equitrac Client</strong> para que el usuario pueda liberar sus impresiones en las multifuncionales Ricoh.",
+          tip: "Es recomendable instalar Equitrac Client desde el Día 1 en cualquier equipo recién configurado o entregado."
+        },
+        {
+          title: "2. Verificar conectividad hacia la impresora Ricoh",
+          description:
+            "Si requieres configurar una cola directa o validar conexión en sitio, confirma desde la computadora del usuario que existe comunicación de red hacia la IP de la impresora y valida que esté encendida.",
           command: `ping [EDITAR-IP-IMPRESORA-RICOH]`
         },
         {
-          title: "2. Método A (Recomendado): Instalar desde Servidor de Impresión",
+          title: "3. Método A (Recomendado): Instalar desde Servidor de Impresión",
           description:
-            'Presiona <code>Win + R</code>, escribe la ruta del servidor de impresión corporativo y presiona Enter. Haz doble clic sobre la impresora Ricoh deseada para que Windows descargue el controlador automáticamente.',
+            'Presiona <code>Win + R</code>, escribe la ruta del servidor de impresión corporativo y presiona Enter. Haz doble clic sobre la impresora o cola Ricoh deseada para que Windows descargue el controlador automáticamente.',
           command: `\\\\[EDITAR-SERVIDOR-IMPRESION]`,
-          tip: "Si aparece un mensaje de '¿Confía en esta impresora?' o solicitud de elevación, ingresa tus credenciales de soporte o apóyate con el OSS Engineer si el usuario no tiene permisos."
+          tip: "Si aparece un mensaje de '¿Confía en esta impresora?' o solicitud de elevación, apóyate con el OSS Engineer si el usuario no tiene permisos."
         },
         {
-          title: "3. Método B: Instalación manual por puerto TCP/IP",
+          title: "4. Método B: Instalación manual por puerto TCP/IP",
           description:
-            "Si el sitio usa conexión directa por IP: ve a <strong>Configuración &gt; Bluetooth y dispositivos &gt; Impresoras y escáneres &gt; Agregar dispositivo &gt; Agregar manualmente</strong>. Elige <em>Agregar una impresora por dirección IP o nombre de host</em>, selecciona <strong>Dispositivo TCP/IP</strong>, ingresa la IP de la Ricoh y selecciona el driver Ricoh correspondiente de la carpeta de respaldo."
+            "Si el equipo requiere conexión directa por IP: ve a <strong>Configuración &gt; Bluetooth y dispositivos &gt; Impresoras y escáneres &gt; Agregar dispositivo &gt; Agregar manualmente</strong>. Elige <em>Agregar una impresora por dirección IP o nombre de host</em>, selecciona <strong>Dispositivo TCP/IP</strong>, ingresa la IP de la Ricoh y selecciona el driver Ricoh correspondiente."
         },
         {
-          title: "4. Configurar preferencias predeterminadas y página de prueba",
+          title: "5. Configurar preferencias y saber cuándo escalar al Ricoh Printer Specialist",
           description:
-            "Abre las <strong>Propiedades de impresora &gt; Preferencias</strong> para validar tamaño de papel (Carta / A4 según corresponda), impresión a doble cara (Dúplex) o blanco y negro por defecto. Finaliza enviando una <strong>Página de prueba</strong>.",
-          warning: "Si el usuario imprime con código PIN / Badge (Follow-Me Printing), recuérdale vincular su gafete en el lector o configurar su código de usuario en las preferencias del driver."
-        },
-        {
-          title: "5. Cuándo escalar al Ricoh Printer Specialist",
-          description:
-            "Si la computadora ya envía trabajos correctamente pero la impresora Ricoh presenta atascos físicos frecuentes, falta de tóner/fusor, códigos de error SC en la pantalla o problemas de escáner/bandejas físicas, repórtalo directamente al <strong>Ricoh Printer Specialist</strong> en sitio."
+            "Envía una <strong>Página de prueba</strong> y valida el funcionamiento con el gafete del usuario en la Ricoh. Si la computadora envía los trabajos pero la impresora Ricoh presenta atascos físicos, falta de tóner, códigos de error SC en pantalla o fallas de bandejas/escáner, repórtalo al <strong>Ricoh Printer Specialist</strong> en sitio.",
+          warning: "Recuerda al usuario que para liberar impresiones en Follow-Me Printing debe usar su gafete corporativo o PIN asignado junto con Equitrac Client activo."
         }
       ],
       troubleshooting: [
@@ -417,52 +444,145 @@ Get-CimInstance Win32_Bios | Select-Object SerialNumber, SMBIOSBIOSVersion`
     },
     {
       id: "bootear-pc-f11-usb",
-      title: "Cómo Bootear una PC: Sin Memoria (F11 PXE) y Con Memoria USB",
+      title: "Cómo Bootear una PC: Con Memoria USB (F9) y Sin Memoria con Restablecimiento Local (F11)",
       category: "Sistemas & Booteo",
       icon: "cpu",
       difficulty: "Intermedio",
       estimatedTime: "20-45 min",
       summary:
-        "Procedimiento completo para arrancar equipos de cómputo e instalar o restaurar la imagen corporativa, tanto mediante arranque por red sin USB (F11 / PXE) como utilizando memoria USB booteable.",
+        "Procedimiento para restaurar o reinstalar equipos corporativos utilizando la memoria USB booteable mediante F9 o el restablecimiento local del sistema mediante F11 (sin USB).",
       prerequisites: [
-        "Respaldo previo de la información del usuario (OneDrive / carpeta de respaldo) — ¡Formatear borra todo!",
-        "Cargador conectado a la corriente eléctrica (obligatorio durante reimagen/BIOS).",
-        "Cable de red Ethernet conectado directamente al puerto RJ45 o adaptador Ethernet corporativo soportado (para arranque F11 sin USB).",
-        "Clave de BIOS corporativa si la máquina está protegida (<span class=\"editable-placeholder\">[EDITAR: Solicitar a Supervisor / Ver bóveda interna]</span>)."
+        "Respaldo previo de la información del usuario (OneDrive / carpeta de respaldo) — ¡Restablecer o formatear borra archivos locales!",
+        "Cargador conectado a la corriente eléctrica (obligatorio durante el proceso).",
+        "Para restablecimiento con F11: contacto directo con el <strong>OSS Engineer</strong> por si el equipo solicita código de validación.",
+        "Para booteo con F9: memoria USB booteable de soporte vigente."
       ],
       steps: [
         {
           title: "1. Preparación previa y respaldo de BitLocker / Datos",
           description:
-            "Antes de reiniciar para formatear o reparar, verifica si el disco está cifrado con BitLocker y asegúrate de tener respaldados los archivos del usuario. Si solo vas a reparar el arranque sin formatear, ten a la mano la clave de recuperación de BitLocker desde el portal de administración/Intune.",
-          warning: "Nunca inicies una reinstalación sin confirmar por escrito o correo que el usuario respaldó sus archivos locales (Descargas, Documentos, Escritorio, PST locales)."
+            "Antes de reiniciar para restablecer o formatear, verifica que el usuario tenga respaldados sus archivos locales y ten presente si el disco está cifrado con BitLocker.",
+          warning: "Nunca inicies una reinstalación sin confirmar que el usuario respaldó sus documentos locales (Descargas, Documentos, Escritorio, PST locales)."
         },
         {
-          title: "2. Opción A — Bootear SIN memoria USB utilizando F11 (Network / PXE Boot)",
+          title: "2. Opción A — Restablecimiento SIN memoria USB utilizando F11 (Datos Locales)",
           description:
-            'Ideal para cargar la imagen corporativa de Alstom directamente desde el servidor de red (<span class="editable-placeholder">[EDITAR: SCCM / MECM / WDS]</span>):<br>1. Conecta el equipo por cable de red Ethernet (el Wi-Fi no funciona para PXE en la mayoría de equipos).<br>2. Enciende o reinicia el equipo y presiona repetidamente la tecla <strong>F11</strong> (en algunos modelos puede abrir el Boot Menu o Recovery/PXE; en ciertos equipos HP/Dell/Lenovo verifica si es <strong>F12 / F9 / F11</strong> según el modelo en sitio).<br>3. Selecciona la opción <strong>IPv4 Network / Onboard NIC (PXE)</strong> y presiona Enter.<br>4. Cuando aparezca el mensaje <em>"Press ENTER for network boot service"</em> o el prompt de PXE, presiona <strong>Enter</strong> (o <strong>F12</strong> si lo solicita en pantalla).<br>5. Selecciona la secuencia de tareas (<span class="editable-placeholder">[EDITAR: Nombre de la Task Sequence Corporativa]</span>) e ingresa la contraseña de despliegue si aplica.',
-          tip: "Si al presionar F11 no aparece la tarjeta de red en el menú de arranque, entra a la BIOS (F2 / F10 / F1), habilita 'UEFI Network Stack' o 'PXE Boot on LAN', y desactiva temporalmente opciones que bloqueen PXE si las instrucciones locales lo indican."
+            'A diferencia de un arranque por red, la tecla <strong>F11</strong> inicia el entorno de recuperación/restablecimiento con los datos locales del equipo:<br>1. Enciende o reinicia el equipo y presiona repetidamente la tecla <strong>F11</strong> hasta entrar a las opciones de recuperación/restablecimiento.<br>2. Selecciona el restablecimiento con la imagen/datos locales del equipo siguiendo las indicaciones en pantalla.<br>3. <strong>Código de autorización:</strong> En algunas ocasiones el sistema solicitará un código de seguridad para continuar. Cuando esto ocurra, solicítalo al <strong>OSS Engineer</strong> enviándole los datos del equipo (número de serie, hostname y/o el código o desafío que muestra en pantalla).',
+          tip: "Ten a la mano una foto clara de la pantalla y la etiqueta del número de serie del equipo antes de escribirle al OSS Engineer para agilizar la obtención del código."
         },
         {
-          title: "3. Opción B — Bootear CON memoria USB",
+          title: "3. Opción B — Bootear CON memoria USB utilizando F9",
           description:
-            'Útil cuando no hay acceso al servidor PXE, estás instalando una imagen offline, o ejecutando herramientas de diagnóstico:<br>1. Inserta la memoria USB booteable (preparada previamente con <span class="editable-placeholder">[EDITAR: Rufus / Ventoy / Media Creation Tool / Imagen Oficial]</span> en formato <strong>GPT / UEFI</strong>).<br>2. Enciende la PC y presiona repetidamente la tecla de <strong>Boot Menu</strong> según la marca (<code>F12</code> en Dell/Lenovo, <code>F9</code> en HP, o <code>F11</code> en placas/equipos configurados con ese acceso directo).<br>3. En la lista UEFI, selecciona el nombre de tu memoria USB (ej. <em>UEFI: Kingston DataTraveler</em>) y presiona Enter.',
-          command: `# Referencia rápida de teclas comunes de Boot Menu / BIOS:
-# - Tecla principal en sitio (PXE / Recovery): F11
-# - Dell: F12 (Boot Menu) | F2 (BIOS)
-# - Lenovo: F12 (Boot Menu) | F1 o Fn+F1 (BIOS)
-# - HP: F9 (Boot Menu) | F10 (BIOS)`
+            'Utiliza este método cuando necesites arrancar directamente desde una memoria USB de imagen o utilidades:<br>1. Inserta la memoria USB booteable de soporte en un puerto USB directo del equipo.<br>2. Enciende la PC y presiona repetidamente la tecla <strong>F9</strong> para abrir el <strong>Boot Menu</strong>.<br>3. Selecciona la opción UEFI correspondiente al nombre de tu memoria USB (ej. <em>UEFI: Kingston DataTraveler</em>) y presiona Enter.',
+          command: `# Referencia rápida de teclas en sitio:
+# - F9  -> Boot Menu para arrancar con Memoria USB
+# - F11 -> Restablecimiento con datos locales (sin USB; puede requerir código del OSS Engineer)
+# - F10 -> Acceso a BIOS/UEFI (en equipos HP)`
         },
         {
-          title: "4. Validación post-instalación",
+          title: "4. Validación post-restablecimiento",
           description:
-            "Al terminar la carga del sistema operativo, verifica que el equipo se una correctamente al dominio o Azure AD/Intune, que tenga sus drivers completos en el Administrador de Dispositivos, que BitLocker vuelva a cifrar la unidad y que las políticas de seguridad/Zscaler se apliquen."
+            "Al finalizar la carga del sistema operativo, valida el inicio de sesión corporativo, la conexión a red/Zscaler, la instalación de <strong>Equitrac Client</strong> desde la tienda de aplicaciones corporativas y el cifrado BitLocker."
         }
       ],
       troubleshooting: [
-        "No detecta el disco duro NVMe durante la instalación desde USB: es probable que falte el driver de controlador de almacenamiento (Intel RST / VMD) en la memoria USB, o requiera cambiar el modo SATA en BIOS según la guía del modelo.",
-        "Error 'PXE-E53: No boot filename received' o timeout en F11: revisa que el puerto de red en la pared tenga enlace (LEDs encendidos), que el cable funcione y que la VLAN del puerto tenga habilitado el DHCP Helper hacia el servidor de imágenes.",
-        "Error de Secure Boot al arrancar una USB externa: confirma que la USB esté formateada en FAT32/UEFI con firma válida, o consulta si la herramienta de diagnóstico requiere desactivar Secure Boot temporalmente (volviendo a activarlo al finalizar)."
+        "El restablecimiento con F11 pide un código y no avanza: envía de inmediato el número de serie y foto de pantalla al <strong>OSS Engineer</strong> para recibir el código correspondiente.",
+        "La memoria USB no aparece al presionar F9: prueba otro puerto USB, asegúrate de que la USB esté preparada en formato UEFI/GPT y revisa en BIOS si el arranque por USB está habilitado.",
+        "No detecta el disco duro NVMe durante instalación desde USB: valida si la imagen USB incluye el controlador de almacenamiento (Intel RST / VMD) del modelo."
+      ]
+    },
+    {
+      id: "aps-catalyst-led",
+      title: "Estados del LED en Access Points (Cisco Catalyst 9100 Series)",
+      category: "Redes & Infraestructura",
+      icon: "wifi",
+      difficulty: "Básico",
+      estimatedTime: "5 min consulta",
+      summary:
+        "Guía visual de referencia rápida para diagnosticar el estado operativo, arranque o fallas PoE de los Access Points Cisco Catalyst 9100 instalados en el sitio a partir del color y patrón de su LED.",
+      prerequisites: [
+        "Identificar físicamente el Access Point (AP) en techo o área operativa y observar el patrón del LED durante al menos 10 segundos.",
+        "Confirmar el puerto de switch o patch panel asociado si el AP muestra falta de energía PoE o error de descubrimiento."
+      ],
+      steps: [
+        {
+          title: "1. Tabla de Estados del LED (Catalyst 9100 Series)",
+          description:
+            `<div class="overflow-x-auto rounded-xl border border-slate-200 dark:border-slate-700 mt-1">
+              <table class="w-full text-left border-collapse text-xs">
+                <thead>
+                  <tr class="bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 uppercase tracking-wider">
+                    <th class="py-2.5 px-3 font-semibold">Estado / Patrón del LED</th>
+                    <th class="py-2.5 px-3 font-semibold">Categoría</th>
+                    <th class="py-2.5 px-3 font-semibold">Significado</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-200 dark:divide-slate-800">
+                  <tr>
+                    <td class="py-2.5 px-3 font-semibold text-slate-900 dark:text-white whitespace-nowrap"><span class="inline-block w-2.5 h-2.5 rounded-full bg-slate-400 mr-1.5 align-middle"></span>Apagado</td>
+                    <td class="py-2.5 px-3 text-slate-600 dark:text-slate-300">Energía / Config.</td>
+                    <td class="py-2.5 px-3 text-slate-600 dark:text-slate-300">El AP no recibe energía PoE o el LED fue deshabilitado desde el WLC.</td>
+                  </tr>
+                  <tr>
+                    <td class="py-2.5 px-3 font-semibold text-slate-900 dark:text-white whitespace-nowrap"><span class="inline-block w-2.5 h-2.5 rounded-full bg-emerald-500 mr-1.5 align-middle"></span>Verde fijo</td>
+                    <td class="py-2.5 px-3 text-slate-600 dark:text-slate-300">Operación normal</td>
+                    <td class="py-2.5 px-3 text-slate-600 dark:text-slate-300">Conectado al controlador (WLC) y operando con normalidad, pero sin clientes inalámbricos asociados. (También aparece brevemente al ejecutar el bootloader).</td>
+                  </tr>
+                  <tr>
+                    <td class="py-2.5 px-3 font-semibold text-slate-900 dark:text-white whitespace-nowrap"><span class="inline-block w-2.5 h-2.5 rounded-full bg-blue-500 mr-1.5 align-middle"></span>Azul fijo</td>
+                    <td class="py-2.5 px-3 text-slate-600 dark:text-slate-300">Operación normal</td>
+                    <td class="py-2.5 px-3 text-slate-600 dark:text-slate-300">Conectado al controlador (WLC) y operando con normalidad con al menos un cliente inalámbrico asociado.</td>
+                  </tr>
+                  <tr>
+                    <td class="py-2.5 px-3 font-semibold text-slate-900 dark:text-white whitespace-nowrap"><span class="inline-block w-2.5 h-2.5 rounded-full bg-blue-400 animate-pulse mr-1.5 align-middle"></span>Azul parpadeante</td>
+                    <td class="py-2.5 px-3 text-slate-600 dark:text-slate-300">Operación</td>
+                    <td class="py-2.5 px-3 text-slate-600 dark:text-slate-300">Descarga o actualización de imagen de firmware/software en curso desde el controlador.</td>
+                  </tr>
+                  <tr>
+                    <td class="py-2.5 px-3 font-semibold text-slate-900 dark:text-white">Alternando Verde y Rojo</td>
+                    <td class="py-2.5 px-3 text-slate-600 dark:text-slate-300">Descubrimiento</td>
+                    <td class="py-2.5 px-3 text-slate-600 dark:text-slate-300">Proceso de descubrimiento y unión (CAPWAP Join) al WLC en progreso.</td>
+                  </tr>
+                  <tr>
+                    <td class="py-2.5 px-3 font-semibold text-slate-900 dark:text-white">Ciclo secuencial: Verde - Rojo - Apagado</td>
+                    <td class="py-2.5 px-3 text-slate-600 dark:text-slate-300">Descubrimiento</td>
+                    <td class="py-2.5 px-3 text-slate-600 dark:text-slate-300">Buscando el controlador WLC. Si dura más de 5 minutos, no logra encontrar ni alcanzar el WLC primario, secundario o terciario.</td>
+                  </tr>
+                  <tr>
+                    <td class="py-2.5 px-3 font-semibold text-slate-900 dark:text-white">Ciclo: Rojo - Apagado - Verde - Apagado - Azul - Apagado</td>
+                    <td class="py-2.5 px-3 text-amber-700 dark:text-amber-400 font-medium">Advertencia / Energía</td>
+                    <td class="py-2.5 px-3 text-slate-600 dark:text-slate-300">Advertencia general o energía PoE insuficiente (ej. conectado a 802.3af cuando requiere 802.3at/PoE+ para operar a plena capacidad).</td>
+                  </tr>
+                  <tr>
+                    <td class="py-2.5 px-3 font-semibold text-slate-900 dark:text-white whitespace-nowrap"><span class="inline-block w-2.5 h-2.5 rounded-full bg-red-500 animate-pulse mr-1.5 align-middle"></span>Parpadeo Rojo</td>
+                    <td class="py-2.5 px-3 text-rose-700 dark:text-rose-400 font-medium">Acción / Error</td>
+                    <td class="py-2.5 px-3 text-slate-600 dark:text-slate-300">Se está presionando el botón Mode para restablecer de fábrica, o indica un fallo crítico/energía insuficiente para levantar los radios.</td>
+                  </tr>
+                  <tr>
+                    <td class="py-2.5 px-3 font-semibold text-slate-900 dark:text-white whitespace-nowrap"><span class="inline-block w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse mr-1.5 align-middle"></span>Parpadeo Verde</td>
+                    <td class="py-2.5 px-3 text-rose-700 dark:text-rose-400 font-medium">Error de arranque</td>
+                    <td class="py-2.5 px-3 text-slate-600 dark:text-slate-300">Fallo en la verificación de firma del boot loader (Boot loader signing verification failure).</td>
+                  </tr>
+                  <tr>
+                    <td class="py-2.5 px-3 font-semibold text-slate-900 dark:text-white">Ciclo: Azul - Rojo - Verde - Apagado</td>
+                    <td class="py-2.5 px-3 text-rose-700 dark:text-rose-400 font-medium">Error de sistema</td>
+                    <td class="py-2.5 px-3 text-slate-600 dark:text-slate-300">Error en el sistema operativo del punto de acceso.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>`,
+          tip: "Cuando un área reporta lentitud o caída de Wi-Fi, revisar si el LED está en Verde/Azul fijo o en ciclo Verde-Rojo-Apagado te permite descartar en segundos si es falla de WLC, energía PoE o un reinicio."
+        },
+        {
+          title: "2. Qué reportar si detectas un patrón de falla",
+          description:
+            "Toma nota del nombre/etiqueta del AP, ubicación física, puerto/switch en el rack (si lo conoces) y el patrón exacto del LED. Comparte esta información con el <strong>OSS Engineer</strong> o el equipo de Redes para revisión de puerto PoE, VLAN o WLC.",
+          warning: "No desconectes cables de patch panel ni presiones el botón físico Mode sin autorización del OSS Engineer, ya que un reset de fábrica borra la configuración del AP."
+        }
+      ],
+      troubleshooting: [
+        "El AP permanece más de 5 minutos en ciclo Verde - Rojo - Apagado: no alcanza al WLC (revisar enlace de red, DHCP o VLAN del puerto en el switch).",
+        "Ciclo Rojo - Apagado - Verde - Apagado - Azul - Apagado: valida que el switch entregue PoE+ (802.3at) y no únicamente PoE estándar (802.3af)."
       ]
     },
     {

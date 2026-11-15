@@ -411,9 +411,9 @@
                       <h5 class="text-sm sm:text-base font-bold text-slate-900 dark:text-white">
                         ${escapeHtml(step.title)}
                       </h5>
-                      <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                      <div class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
                         ${step.description}
-                      </p>
+                      </div>
 
                       ${
                         step.command

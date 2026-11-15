@@ -46,7 +46,7 @@
   <script src="https://unpkg.com/lucide@latest"></script>
 
   <!-- Custom Styles -->
-  <link rel="stylesheet" href="assets/css/styles.css?v=4" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=6" />
 </head>
 <body class="bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-100 antialiased transition-colors duration-200">
   <!-- Mobile Sidebar Overlay -->
@@ -176,7 +176,15 @@
               class="w-full text-left flex items-center gap-2.5 px-3 py-1.5 rounded-md text-xs text-slate-600 dark:text-slate-400 hover:text-alstom-blue dark:hover:text-sky-400 hover:bg-slate-100 dark:hover:bg-slate-800/70 transition-colors"
             >
               <i data-lucide="cpu" class="w-3.5 h-3.5 shrink-0"></i>
-              <span class="truncate">Bootear PC (F11 y USB)</span>
+              <span class="truncate">Bootear PC (F9 USB y F11)</span>
+            </button>
+            <button
+              type="button"
+              data-jump-guide="aps-catalyst-led"
+              class="w-full text-left flex items-center gap-2.5 px-3 py-1.5 rounded-md text-xs text-slate-600 dark:text-slate-400 hover:text-alstom-blue dark:hover:text-sky-400 hover:bg-slate-100 dark:hover:bg-slate-800/70 transition-colors"
+            >
+              <i data-lucide="wifi" class="w-3.5 h-3.5 shrink-0"></i>
+              <span class="truncate">Estados LED APs (Catalyst)</span>
             </button>
             <button
               type="button"
@@ -575,7 +583,7 @@
             <div class="pt-5 border-t border-slate-200 dark:border-slate-800 space-y-4">
               <h3 class="text-base font-bold text-slate-900 dark:text-white flex items-center gap-2">
                 <i data-lucide="key-round" class="w-4 h-4 text-alstom-blue"></i>
-                Cómo Solicitar Permiso y Acceder al Repositorio Privado
+                Acceso Opcional al Repositorio Privado (Para Cambios en Código)
               </h3>
               <div id="net-access-steps" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
             </div>
@@ -676,6 +684,9 @@
             <button type="button" data-category="Sistemas & Booteo" class="guide-filter-btn px-3.5 py-1.5 rounded-full text-xs font-semibold bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:border-alstom-blue transition">
               Sistemas &amp; Booteo
             </button>
+            <button type="button" data-category="Redes & Infraestructura" class="guide-filter-btn px-3.5 py-1.5 rounded-full text-xs font-semibold bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:border-alstom-blue transition">
+              Redes &amp; Infraestructura
+            </button>
             <button type="button" data-category="Logística & Procesos" class="guide-filter-btn px-3.5 py-1.5 rounded-full text-xs font-semibold bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:border-alstom-blue transition">
               Logística &amp; Procesos
             </button>
@@ -767,7 +778,7 @@
   </div>
 
   <!-- Data & Application Scripts -->
-  <script src="assets/js/guides-data.js?v=4"></script>
-  <script src="assets/js/app.js?v=4"></script>
+  <script src="assets/js/guides-data.js?v=6"></script>
+  <script src="assets/js/app.js?v=6"></script>
 </body>
 </html>
