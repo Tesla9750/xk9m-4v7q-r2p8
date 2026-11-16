@@ -190,28 +190,44 @@ window.HANDOVER_DATA = {
     ],
     keyDocuments: [
       {
-        title: "Bitácora de Actividades y Tickets Frecuentes",
-        folder: "07-Respaldo-Actividades",
-        format: "XLSX / MD",
-        description:
-          "Registro histórico de incidencias comunes en el sitio y cómo se resolvieron paso a paso.",
-        updated: '<span class="editable-placeholder">[EDITAR: Mes/Año]</span>'
-      },
-      {
-        title: "Inventario de Equipos y Stock de Periféricos",
-        folder: "05-Plantillas-Formatos",
-        format: "XLSX",
-        description:
-          "Control de laptops disponibles en bodega, cargadores, maletines, dockings, teléfonos y equipos en resguardo.",
-        updated: '<span class="editable-placeholder">[EDITAR: Mes/Año]</span>'
-      },
-      {
         title: "Scripts y Códigos de Soporte Operativo",
         folder: "01-Codigos-y-Scripts",
         format: "PS1 / PY / MD",
         description:
-          "Herramientas y scripts listos para automatizar consultas rápidas o tareas recurrentes de soporte.",
-        updated: '<span class="editable-placeholder">[EDITAR: Mes/Año]</span>'
+          "Herramientas y scripts listos para automatizar la creación de etiquetas y generación de QRs.",
+        updated: "Noviembre 2026"
+      },
+      {
+        title: "Plantilla de Registro de Equipos Recibidos por Paquetería",
+        folder: "05-Plantillas-Formatos",
+        format: "XLSX",
+        description:
+          "Plantilla de ejemplo para el registro de equipos que llegan por paquetería.",
+        updated: "Noviembre 2026"
+      },
+      {
+        title: "Plantilla para Solicitud de Guías de Envío",
+        folder: "05-Plantillas-Formatos",
+        format: "XLSX",
+        description:
+          "Plantilla para la recopilación de información necesaria en la solicitud de guías de envío.",
+        updated: "Noviembre 2026"
+      },
+      {
+        title: "SHGB Layout y Layout NOV 2026",
+        folder: "07-Respaldo-Actividades",
+        format: "PDF",
+        description:
+          "Mapa de los equipos de red y comunicación con la ubicación de los diferentes dispositivos distribuidos en la planta.",
+        updated: "Noviembre 2026"
+      },
+      {
+        title: "Alstom_configuration_RPI5",
+        folder: "02-Configuracion-Raspberry-Pi5",
+        format: "PDF",
+        description:
+          "Manual para la configuración de Raspberry Pi 5 utilizado en los despliegues del sitio.",
+        updated: "Noviembre 2026"
       },
       {
         title: "Directorio Privado de Roles y Contactos",
@@ -219,7 +235,7 @@ window.HANDOVER_DATA = {
         format: "MD / XLSX",
         description:
           "Listado interno dentro del repositorio privado con los nombres, correos y extensiones asignados a cada rol de soporte y escalación.",
-        updated: '<span class="editable-placeholder">[EDITAR: Mes/Año]</span>'
+        updated: "Noviembre 2026"
       }
     ]
   },
