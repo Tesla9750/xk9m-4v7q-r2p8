@@ -212,6 +212,26 @@
       )
       .join("");
 
+    document.getElementById("net-architecture-list").innerHTML = (net.architectureLayers || [])
+      .map(
+        (layer) => `
+        <li class="p-2.5 rounded-lg bg-slate-50 dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-700/70">
+          <span class="font-mono font-semibold text-alstom-navy dark:text-sky-300 block">${escapeHtml(layer.name)}</span>
+          <span class="text-slate-600 dark:text-slate-400 leading-snug">${escapeHtml(layer.role)}</span>
+        </li>`
+      )
+      .join("");
+
+    document.getElementById("net-implemented-list").innerHTML = (net.implementedSummary || [])
+      .map(
+        (item) => `
+        <li class="flex items-start gap-2">
+          <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500 shrink-0 mt-0.5"></i>
+          <span class="leading-relaxed">${escapeHtml(item)}</span>
+        </li>`
+      )
+      .join("");
+
     document.getElementById("net-access-steps").innerHTML = net.accessSteps
       .map(
         (item) => `

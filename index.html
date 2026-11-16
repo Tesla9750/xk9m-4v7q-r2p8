@@ -46,7 +46,7 @@
   <script src="https://unpkg.com/lucide@latest"></script>
 
   <!-- Custom Styles -->
-  <link rel="stylesheet" href="assets/css/styles.css?v=11" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=13" />
 </head>
 <body class="bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-100 antialiased transition-colors duration-200">
   <!-- Mobile Sidebar Overlay -->
@@ -580,6 +580,27 @@
               </div>
             </div>
 
+            <!-- Architecture & Current Status Grid -->
+            <div class="pt-5 border-t border-slate-200 dark:border-slate-800 grid grid-cols-1 lg:grid-cols-2 gap-5">
+              <!-- Architecture Layers -->
+              <div class="space-y-2.5">
+                <h3 class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 flex items-center gap-1.5">
+                  <i data-lucide="layers" class="w-3.5 h-3.5 text-alstom-blue"></i>
+                  Arquitectura de la Solución
+                </h3>
+                <ul id="net-architecture-list" class="space-y-2 text-xs"></ul>
+              </div>
+
+              <!-- Current Status / Implemented -->
+              <div class="space-y-2.5">
+                <h3 class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 flex items-center gap-1.5">
+                  <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-emerald-500"></i>
+                  Estado Actual (Implementado)
+                </h3>
+                <ul id="net-implemented-list" class="space-y-2 text-xs text-slate-700 dark:text-slate-300"></ul>
+              </div>
+            </div>
+
             <!-- Access Request Steps -->
             <div class="pt-5 border-t border-slate-200 dark:border-slate-800 space-y-4">
               <h3 class="text-base font-bold text-slate-900 dark:text-white flex items-center gap-2">
@@ -955,7 +976,7 @@
   </div>
 
   <!-- Data & Application Scripts -->
-  <script src="assets/js/guides-data.js?v=11"></script>
-  <script src="assets/js/app.js?v=11"></script>
+  <script src="assets/js/guides-data.js?v=13"></script>
+  <script src="assets/js/app.js?v=13"></script>
 </body>
 </html>

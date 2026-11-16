@@ -252,80 +252,100 @@ window.HANDOVER_DATA = {
    * Información del Proyecto de Monitoreo de Red y acceso al repositorio privado.
    */
   networkProject: {
-    title: "Proyecto de Monitoreo de Red Local",
-    status: "Repositorio Privado (Acceso Opcional)",
-    repoSlug: '<span class="editable-placeholder">[EDITAR: usuario-o-org/ist-network-monitor]</span>',
+    title: "Proyecto MonitoreoRed (Alstom)",
+    status: "Operativo • .NET 8 / SQL Server",
+    repoSlug:
+      '<a href="https://github.com/Tesla9750/MonitoreoRed_Alstom" target="_blank" rel="noopener noreferrer" class="underline decoration-alstom-blue/50 hover:text-alstom-blue dark:hover:text-sky-400">Tesla9750/MonitoreoRed_Alstom</a>',
     ownerRole:
-      'Juan de Dios Benitez Nava (<span class="editable-placeholder">[EDITAR: tu.correo.contacto@ejemplo.com]</span>) &bull; Respaldo original',
+      "Juan de Dios Benitez Nava (jdd_ben@hotmail.com) &bull; Respaldo original",
     overview:
-      "Proyecto desarrollado durante mi periodo en IS&T para supervisar la disponibilidad, latencia y estado de equipos críticos de la red local (switches, access points, impresoras y enlaces principales). Nota importante: solicitar permiso al código fuente es completamente opcional; está pensado para practicantes que deseen realizar mejoras o actualizaciones a nivel código. La copia original permanece bajo mi resguardo para gestionar accesos y futuras actualizaciones.",
+      "Sistema de monitoreo de red que supervisa los enlaces de red de cada uno de los sitios del país y equipos de comunicación, con capacidad para monitorear también Access Points (APs), impresoras o cualquier dispositivo conectado a la red Alstom que cuente con una dirección IP. Permite detectar caídas oportunamente, registrar historial en SQL Server y enviar alertas automáticas. Nota: solicitar acceso al código fuente es opcional y está pensado para quien desee revisar o extender el proyecto.",
     monitoredAssets: [
-      "Switches de acceso y distribución (Site / Racks)",
-      "Access Points Wi-Fi (ej. Catalyst 9100 Series)",
-      "Impresoras de red y estaciones críticas",
-      "Gateways, enlaces ISP y servidores locales"
+      "Enlaces de red de cada uno de los sitios del país y equipos de comunicación",
+      "Access Points (APs), impresoras y cualquier dispositivo con IP en la red Alstom",
+      "Estado actual de disponibilidad (EstadoActualEquipo) e historial de eventos",
+      "Políticas de monitoreo y ventanas de mantenimiento",
+      "Catálogos de áreas, categorías, grupos y tipos de destino",
+      "Envío de alertas automáticas por correo electrónico mediante Make"
     ],
     techStack: [
-      '<span class="editable-placeholder">[EDITAR: Python / Node.js / PowerShell]</span>',
-      '<span class="editable-placeholder">[EDITAR: ICMP Ping / SNMP / HTTP]</span>',
-      '<span class="editable-placeholder">[EDITAR: Dashboard Web / Grafana / Flask]</span>',
-      "Git & GitHub Private Repo"
+      "C# / .NET 8.0",
+      "ASP.NET Core Web API",
+      "Entity Framework Core",
+      "SQL Server (MonitoreoRedDB)",
+      "Swagger / OpenAPI",
+      "Visual Studio 2022",
+      "Make (Alertas por correo)",
+      "Git & GitHub"
+    ],
+    architectureLayers: [
+      { name: "MonitoreoRed.Api", role: "Endpoints HTTP, controllers, configuración web y Swagger" },
+      { name: "MonitoreoRed.Application", role: "DTOs, interfaces, contratos y lógica de aplicación" },
+      { name: "MonitoreoRed.Domain", role: "Entidades y conceptos centrales del dominio" },
+      { name: "MonitoreoRed.Infrastructure", role: "DbContext, EF Core, SQL Server y servicios técnicos" },
+      { name: "MonitoreoRed.Worker", role: "Procesamiento en segundo plano para monitoreo automático" },
+      { name: "MonitoreoRed.UnitTests / IntegrationTests", role: "Pruebas unitarias y de integración" }
+    ],
+    implementedSummary: [
+      "El sistema funciona de manera operativa en todos los puntos contemplados.",
+      "Solución .sln por capas conectada a la base de datos MonitoreoRedDB en SQL Server.",
+      "API y Swagger operativos para consultar y gestionar equipos, políticas, estados actuales y ventanas de mantenimiento.",
+      "Notificaciones automáticas por correo integradas y funcionando a través de la plataforma Make."
     ],
     accessSteps: [
       {
         step: 1,
-        title: "Evalúa si necesitas acceso a nivel código (Opcional)",
+        title: "Evalúa si necesitas acceso al código (Opcional)",
         detail:
-          "Si únicamente utilizarás la herramienta en operación diaria no necesitas tocar el repositorio. Si deseas estudiar el código, adaptarlo o proponer mejoras, sigue los pasos siguientes."
+          "Si solo consultarás la operación diaria no necesitas modificar el repositorio. Si deseas continuar el desarrollo, revisar la arquitectura o agregar módulos, sigue estos pasos."
       },
       {
         step: 2,
-        title: "Solicita el acceso al practicante saliente",
+        title: "Solicita acceso al repositorio privado",
         detail:
-          'Envía un correo a <strong>Juan de Dios Benitez Nava</strong> (<span class="editable-placeholder">[EDITAR: tu.correo.contacto@ejemplo.com]</span>) con tu usuario de GitHub (ej. <code>@tu-usuario</code>) usando la plantilla inferior, e informa también a tu <strong>Local Operations Specialist</strong> si realizarás actualizaciones para el área.'
+          'Envía un correo a <strong>Juan de Dios Benitez Nava</strong> (<code>jdd_ben@hotmail.com</code>) con tu usuario de GitHub usando la plantilla inferior, e informa a tu <strong>Local Operations Specialist</strong> si realizarás cambios para el sitio.'
       },
       {
         step: 3,
         title: "Acepta la invitación en GitHub",
         detail:
-          'Una vez revisada tu solicitud, recibirás una invitación al repositorio privado (también visible en <code>github.com/notifications</code>) para consultar o colaborar mediante ramas/Pull Requests sobre la copia original.'
+          'Recibirás una invitación al repositorio privado <code>Tesla9750/MonitoreoRed_Alstom</code> (visible en <code>github.com/notifications</code>) para trabajar mediante ramas o Pull Requests.'
       },
       {
         step: 4,
-        title: "Clona y configura el entorno local",
+        title: "Configura SQL Server y user-secrets en local",
         detail:
-          'Configura tu clave SSH o Personal Access Token (PAT) en Git para clonar el repositorio privado, lee el <code>README.md</code> interno y crea tu archivo <code>.env</code> desde <code>.env.example</code> (nunca subas credenciales al repo).'
+          'Clona el proyecto, asegúrate de tener creada la BD <code>MonitoreoRedDB</code> con sus tablas/datos iniciales y configura tu cadena de conexión mediante <code>dotnet user-secrets</code> (sin exponer credenciales en código).'
       }
     ],
-    requestTemplate: `Asunto: Solicitud opcional de acceso a repositorio - Proyecto Monitoreo de Red IS&T
+    requestTemplate: `Asunto: Solicitud opcional de acceso a repositorio - MonitoreoRed_Alstom
 
 Hola Juan de Dios,
 
 Espero que estés muy bien.
 
-Actualmente soy el nuevo practicante de IS&T en Alstom (SHGB) y me gustaría revisar/actualizar el código del Proyecto de Monitoreo de Red.
+Actualmente soy el nuevo practicante de IS&T en Alstom (SHGB) y me gustaría revisar y continuar el desarrollo del proyecto MonitoreoRed_Alstom.
 
 Mis datos para la invitación en GitHub son:
 - Nombre completo: [EDITAR: Tu Nombre Completo]
 - Correo Alstom: [EDITAR: tu.nombre@alstomgroup.com]
 - Usuario de GitHub: @[EDITAR: tu-usuario-github]
-- Repositorio solicitado: [EDITAR: usuario-o-org/ist-network-monitor]
-- Motivo / Mejora planeada: [EDITAR: Ej. Mantenimiento / Agregar nuevos equipos]
+- Repositorio solicitado: Tesla9750/MonitoreoRed_Alstom
+- Motivo / Mejora planeada: [EDITAR: Ej. Implementar Worker / VerificacionesMonitoreo]
 
 Quedo atento a tu respuesta. ¡Muchas gracias!
 
 Saludos,
 [EDITAR: Tu Nombre]
 Practicante IS&T - Alstom`,
-    setupCommands: `# 1. Clonar el repositorio privado (vía HTTPS o SSH)
-git clone https://github.com/[EDITAR-USUARIO]/[EDITAR-REPO-MONITOREO].git
+    setupCommands: `# 1. Clonar el repositorio privado
+git clone https://github.com/Tesla9750/MonitoreoRed_Alstom.git
+cd MonitoreoRed_Alstom
 
-# 2. Entrar a la carpeta del proyecto
-cd [EDITAR-REPO-MONITOREO]
+# 2. Configurar cadena de conexión en desarrollo (user-secrets)
+dotnet user-secrets set "ConnectionStrings:DefaultConnection" "Server=.\\MONITOREO;Database=MonitoreoRedDB;User Id=sa;Password=TU_PASSWORD;TrustServerCertificate=True;"
 
-# 3. Revisar variables de entorno y dependencias
-# (Consulta el README.md interno para detalles específicos del proyecto)
-cp .env.example .env`
+# 3. Abrir la solución en Visual Studio 2022 y ejecutar MonitoreoRed.Api (Swagger)`
   },
 
   /**
