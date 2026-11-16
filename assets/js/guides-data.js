@@ -81,7 +81,7 @@ window.HANDOVER_DATA = {
       phase: "Semana 1",
       title: "Ubicar stock de periféricos, etiquetas (Asset Tags) y llaves",
       description:
-        "Identificar dónde se almacenan teclados, mouse, diademas, cables de red, cargadores, dockings, maletines, consumibles y etiquetas de activo (Asset Tags).",
+        "Identificar dónde se almacenan teclados, mouse, diademas, cables de red, cargadores, dockings, maletines y consumibles.",
       tag: "Inventario"
     },
     {
@@ -163,7 +163,7 @@ window.HANDOVER_DATA = {
         name: "03-My-Voice-Kiosk-2026/",
         icon: "monitor",
         description:
-          "Archivos de seguimiento, respaldo de documentación del proyecto Kiosk My Voice 2026."
+          "Archivos de seguimiento, respaldo de documentación del proyecto Kiosk y My Voice 2026."
       },
       {
         name: "04-Refresh-Telefonos-2026/",
@@ -361,40 +361,44 @@ dotnet user-secrets set "ConnectionStrings:DefaultConnection" "Server=.\\MONITOR
       difficulty: "Básico",
       estimatedTime: "15 min lectura",
       summary:
-        "Resumen operativo de cómo arrancar tu jornada, dónde gestionar los tickets de usuarios, herramientas indispensables en tu laptop y buenas prácticas de atención en sitio.",
+        "Resumen operativo de cómo arrancar tu jornada, el flujo correcto para atender a usuarios que acuden al área por soporte, herramientas indispensables y buenas prácticas en sitio.",
       prerequisites: [
         "Cuenta de red corporativa activa y acceso a Microsoft Teams / Outlook.",
-        "Acceso al portal de tickets (<span class=\"editable-placeholder\">[EDITAR: ServiceNow / Jira / Sistema Local]</span>).",
-        "Conocer la ubicación de la bodega de TI y llaves/accesos físicos."
+        "Conocer la ubicación de la bodega de TI, llaves/accesos físicos y el número de soporte publicado en el área."
       ],
       steps: [
         {
-          title: "1. Revisa la cola de tickets e incidentes al iniciar el turno",
+          title: "1. Inicia el día revisando Outlook (antes de las 9:00 a.m.)",
           description:
-            'Al llegar, abre tu correo, Microsoft Teams y la bandeja del portal de tickets (<span class="editable-placeholder">[EDITAR: URL o Nombre del Portal de Tickets]</span>). Prioriza incidentes que detengan producción o líneas operativas antes que solicitudes de periféricos.',
-          tip: "Si un usuario te intercepta en el pasillo pidiendo soporte rápido, ayúdalo si es urgente, pero pídele amablemente crear el ticket (o créalo tú en su nombre) para dejar registro de tus métricas."
+            "Por lo general, si llegas antes que el resto del equipo (que suele integrarse alrededor de las <strong>9:00 a.m.</strong>), comienza revisando <strong>Outlook</strong> para confirmar si existen correos solicitando atención o revisión de equipos en las <strong>naves de producción</strong>. En caso afirmativo, <strong>equípate con tu EPP completo</strong>, acude al punto indicado, realiza las verificaciones necesarias, <strong>toma fotos de evidencia</strong> y reporta el resultado con el <strong>OSS Engineer</strong>."
         },
         {
-          title: "2. Ten a la mano tu kit básico de herramientas",
+          title: "2. Cómo atender a un usuario que acude al área por soporte",
           description:
-            'Prepara en tu escritorio o mochila técnica: 1 memoria USB booteable de imagen, 1 USB con utilidades/drivers, adaptador Ethernet USB-C a RJ45, desarmador de precisión, etiquetas adhesivas para activos y un cable de red probado.',
-          command: `# Comando útil en PowerShell para consultar información rápida de un equipo
-Get-CimInstance Win32_Bios | Select-Object SerialNumber, SMBIOSBIOSVersion`
+            "Cuando un usuario llegue directamente al área buscando ayuda, escúchalo con atención para entender su problema y explícale que <strong>siempre debe levantar un ticket</strong> llamando al <strong>número de soporte publicado en el área</strong>. El equipo de soporte telefónico intentará resolverlo de forma remota y, si no es posible, escalará el ticket al <strong>OSS Engineer</strong>, quien se comunicará con el usuario para atenderlo en sitio. <strong>Nunca se debe contactar directamente al OSS Engineer ni a otros miembros del área por soporte sin un ticket previo.</strong>",
+          tip: "Si un usuario te intercepta en el pasillo o llega directo al área pidiendo soporte rápido, escúchalo con amabilidad pero indícale que debe llamar al número de soporte para levantar su propio ticket y canalizar la atención por el flujo oficial."
         },
         {
-          title: "3. Verifica el flujo de entregas, bajas y envíos (Responsivas)",
+          title: "3. Ubica y utiliza las herramientas disponibles en el área",
           description:
-            'Nunca entregues o envíes una laptop, teléfono corporativo, docking, maletín, monitor o cargador sin validar sus accesorios físicos, registrarlo en el control de inventario y generar su responsiva en <span class="editable-placeholder">[EDITAR: Carpeta 05-Plantillas-Formatos / Portal de Activos]</span>.'
+            "El área cuenta con herramientas y consumibles de soporte (memorias USB booteables de imagen y utilidades, desarmadores de precisión, etiquetas adhesivas para activos y cables de red probados). Ubica dónde se resguardan, úsalos cuando los necesites y <strong>regrésalos siempre a su sitio</strong> al terminar."
         },
         {
-          title: "4. Escala a tiempo cuando un problema salga de tu alcance",
+          title: "4. Verifica el flujo de entregas, bajas y envíos (Responsivas)",
           description:
-            'Si una incidencia requiere permisos de Domain Admin, cambios en firewall corporativo o fallas de infraestructura global, documenta las pruebas que ya hiciste (capturas, IP, hostname, número de serie) y escala al equipo L2/L3 correspondiente.'
+            'Nunca entregues o envíes una laptop, teléfono corporativo, docking, maletín, monitor o cargador sin validar sus accesorios físicos y registrarlo en el control de inventario.'
+        },
+        {
+          title: "5. Canaliza y escala correctamente los casos complejos",
+          description:
+            "Si durante una revisión apoyada con el equipo detectas una falla que requiere permisos administrativos avanzados, cambios en red/firewall o infraestructura, documenta las pruebas realizadas (capturas, IP, hostname, número de serie) y apóyate en el <strong>Local Operations Specialist</strong> o el <strong>OSS Engineer</strong> según corresponda."
         }
       ],
       troubleshooting: [
-        "No tengo acceso a alguna carpeta de red o herramienta: pide a tu tutor que verifique en qué grupos de Active Directory estás dado de alta.",
-        "Zscaler / VPN bloquea una herramienta técnica local: valida si el sitio o IP local debe agregarse a excepciones o si requiere perfil administrativo."
+        "Reiniciar el equipo: muchas fallas temporales de red, sesión o aplicaciones se resuelven con un reinicio completo.",
+        "Verificar actualizaciones pendientes: confirma que el equipo no tenga actualizaciones de Windows o aplicaciones corporativas pendientes de instalar o aplicar.",
+        "Validar que se use la aplicación correcta: asegúrate de que el usuario esté utilizando la herramienta o cliente oficial correspondiente al proceso.",
+        "Equipos nuevos en configuración inicial: el aprovisionamiento puede tardar de 4 a 6 horas; indícale al usuario que debe reiniciar el equipo constantemente durante ese tiempo para completar políticas y descargas."
       ]
     },
     {
@@ -405,97 +409,91 @@ Get-CimInstance Win32_Bios | Select-Object SerialNumber, SMBIOSBIOSVersion`
       difficulty: "Básico",
       estimatedTime: "10 min",
       summary:
-        "Procedimiento estándar para habilitar la impresión corporativa con Equitrac Client y conectar impresoras multifuncionales Ricoh en Windows, sabiendo cuándo escalar al Ricoh Printer Specialist.",
+        "Guía dividida en dos métodos: el procedimiento general mediante Equitrac Client (Kofax) y FollowYou Print (estándar en toda la planta), y la conexión directa por IP reservada únicamente para casos especiales.",
       prerequisites: [
-        "Aplicación <strong>Equitrac Client</strong> instalada desde la tienda de aplicaciones corporativas.",
-        "Dirección IP de la impresora Ricoh o ruta del servidor de impresión (<span class=\"editable-placeholder\">[EDITAR: \\\\servidor-impresion\\nombre-cola]</span>).",
-        "Equipo del usuario conectado a la red corporativa (LAN o Wi-Fi interno, no red de invitados).",
-        "Driver Ricoh PCL6 / Universal Print Driver disponible en la carpeta de respaldo (si se instala por IP directa)."
+        "Aplicación <strong>Equitrac Client (Kofax)</strong> instalada desde la tienda de aplicaciones corporativas (para el procedimiento general).",
+        "Equipo conectado a la red corporativa (LAN o Wi-Fi interno, no red de invitados).",
+        "Credencial de acceso temporal o credenciales corporativas (correo y contraseña) para liberar impresiones en la Ricoh.",
+        "<em>Solo casos especiales (IP directa):</em> Dirección IP de la impresora Ricoh (el driver ya viene instalado en el equipo)."
       ],
       steps: [
         {
-          title: "1. Instalar Equitrac Client desde la tienda corporativa",
+          title: "Sección A (Procedimiento General) — 1. Instalar Equitrac Client (Kofax)",
           description:
-            "Antes de configurar impresoras en el equipo, entra a la tienda de aplicaciones corporativas (<strong>Company Portal / Software Center</strong>) en Windows e instala <strong>Equitrac Client</strong> para que el usuario pueda liberar sus impresiones en las multifuncionales Ricoh.",
-          tip: "Es recomendable instalar Equitrac Client desde el Día 1 en cualquier equipo recién configurado o entregado."
+            "Entra a la tienda de aplicaciones corporativas (<strong>Company Portal / Software Center</strong>) en Windows e instala <strong>Equitrac Client (Kofax)</strong>. Esta aplicación habilita automáticamente la impresora corporativa llamada <strong>FollowYou Print</strong>.",
+          tip: "Puedes recomendar a los usuarios instalarla desde la tienda corporativa, ya que normalmente no configuramos sus equipos directamente sino que ellos mismos realizan la instalación."
         },
         {
-          title: "2. Verificar conectividad hacia la impresora Ricoh",
+          title: "Sección A (Procedimiento General) — 2. Enviar a imprimir con FollowYou Print",
           description:
-            "Si requieres configurar una cola directa o validar conexión en sitio, confirma desde la computadora del usuario que existe comunicación de red hacia la IP de la impresora y valida que esté encendida.",
-          command: `ping [EDITAR-IP-IMPRESORA-RICOH]`
+            "Cada vez que desees imprimir un documento, selecciona la impresora <strong>FollowYou Print</strong> en tu computadora y envía el trabajo. No necesitas elegir una impresora física específica desde Windows."
         },
         {
-          title: "3. Método A (Recomendado): Instalar desde Servidor de Impresión",
+          title: "Sección A (Procedimiento General) — 3. Liberar en cualquier Ricoh de la planta",
           description:
-            'Presiona <code>Win + R</code>, escribe la ruta del servidor de impresión corporativo y presiona Enter. Haz doble clic sobre la impresora o cola Ricoh deseada para que Windows descargue el controlador automáticamente.',
-          command: `\\\\[EDITAR-SERVIDOR-IMPRESION]`,
-          tip: "Si aparece un mensaje de '¿Confía en esta impresora?' o solicitud de elevación, apóyate con el OSS Engineer si el usuario no tiene permisos."
+            "Acude a cualquier impresora multifuncional Ricoh disponible en la planta y autentícate pasando tu <strong>credencial de acceso temporal</strong> o ingresando tus <strong>credenciales corporativas (correo corporativo y contraseña)</strong> en la pantalla del equipo para liberar e imprimir tus documentos.",
+          warning: "Los trabajos quedan en espera bajo tu usuario hasta que te autenticas en la multifuncional, evitando que tus documentos se mezclen o queden expuestos."
         },
         {
-          title: "4. Método B: Instalación manual por puerto TCP/IP",
+          title: "Sección B (Casos Especiales) — 4. Agregar impresora de manera directa por IP",
           description:
-            "Si el equipo requiere conexión directa por IP: ve a <strong>Configuración &gt; Bluetooth y dispositivos &gt; Impresoras y escáneres &gt; Agregar dispositivo &gt; Agregar manualmente</strong>. Elige <em>Agregar una impresora por dirección IP o nombre de host</em>, selecciona <strong>Dispositivo TCP/IP</strong>, ingresa la IP de la Ricoh y selecciona el driver Ricoh correspondiente."
+            "Únicamente en <strong>casos especiales</strong> que requieran conexión directa sin usar FollowYou Print: confirma conectividad con <code>ping</code> a la IP de la Ricoh, ve a <strong>Configuración &gt; Bluetooth y dispositivos &gt; Impresoras y escáneres &gt; Agregar dispositivo &gt; Agregar manualmente</strong>, elige <em>Agregar una impresora por dirección IP o nombre de host</em>, selecciona <strong>Dispositivo TCP/IP</strong>, ingresa la IP y elige el driver Ricoh ya instalado en el sistema.",
+          command: `ping <IP-IMPRESORA-RICOH>`,
+          tip: "Si el sistema solicita elevación o permisos administrativos, apóyate con el OSS Engineer."
         },
         {
-          title: "5. Configurar preferencias y saber cuándo escalar al Ricoh Printer Specialist",
+          title: "5. Cuándo escalar al Ricoh Printer Specialist",
           description:
-            "Envía una <strong>Página de prueba</strong> y valida el funcionamiento con el gafete del usuario en la Ricoh. Si la computadora envía los trabajos pero la impresora Ricoh presenta atascos físicos, falta de tóner, códigos de error SC en pantalla o fallas de bandejas/escáner, repórtalo al <strong>Ricoh Printer Specialist</strong> en sitio.",
-          warning: "Recuerda al usuario que para liberar impresiones en Follow-Me Printing debe usar su gafete corporativo o PIN asignado junto con Equitrac Client activo."
+            "Si la computadora envía correctamente los trabajos pero la multifuncional Ricoh presenta atascos físicos, falta de tóner, códigos de error SC en pantalla o fallas de bandejas/escáner, repórtalo al <strong>Ricoh Printer Specialist</strong> en sitio."
         }
       ],
-      troubleshooting: [
-        "Error 'La cola de impresión se queda trabada' en Windows: ejecuta <code>net stop spooler</code>, limpia <code>C:\\Windows\\System32\\spool\\PRINTERS\\*</code> y ejecuta <code>net start spooler</code>.",
-        "Error 0x0000011b o restricción de Point and Print en Windows 11: instala primero el driver Ricoh manualmente como administrador.",
-        "Código de error SC / alerta física / tóner agotado en la multifuncional: acude con el <strong>Ricoh Printer Specialist</strong> para revisión y suministro en sitio."
-      ]
+      troubleshooting: []
     },
     {
       id: "impresora-etiquetas",
-      title: "Cómo Configurar e Instalar la Impresora de Etiquetas",
+      title: "Cómo Configurar e Instalar la Impresora de Etiquetas (Zebra ZT411)",
       category: "Hardware & Impresoras",
       icon: "tag",
-      difficulty: "Intermedio",
-      estimatedTime: "15-20 min",
+      difficulty: "Básico",
+      estimatedTime: "10-15 min",
       summary:
-        "Instalación de drivers térmicos, ajuste de medidas de etiqueta, calibración de sensores de brecha (gap) y pruebas para impresoras de etiquetas (ej. Zebra / Dymo / Honeywell).",
+        "Instalación por USB y configuración exacta de página y opciones de impresión para la impresora de etiquetas Zebra ZDesigner ZT411-203dpi ZPL.",
       prerequisites: [
-        "Modelo exacto de impresora de etiquetas (<span class=\"editable-placeholder\">[EDITAR: Ej. Zebra ZD421 / ZT230 / GX420t]</span>).",
-        "Rollo de etiquetas y Ribbon (si aplica impresión por transferencia térmica) correctamente colocados.",
-        "Driver oficial disponible en el respaldo local del área o en el paquete de controladores."
+        "Impresora de etiquetas <strong>Zebra ZDesigner ZT411-203dpi ZPL</strong> conectada directamente por <strong>cable USB</strong> (no se utiliza por Wi-Fi).",
+        "Rollo de etiquetas y <strong>Ribbon</strong> correctamente colocados (para transferencia térmica).",
+        "Controlador <strong>ZDesigner</strong> disponible en el equipo o en el respaldo del área si Windows no lo detecta automáticamente."
       ],
       steps: [
         {
-          title: "1. Verificar carga física del rollo, ribbon y conexión",
+          title: "1. Conectar por USB y verificar rollo y ribbon",
           description:
-            "Abre la cubierta de la impresora y asegúrate de que el rollo de etiquetas esté centrado entre las guías amarillas/verdes y pase por debajo del sensor móvil. Conecta el cable USB o cable de red Ethernet según la estación.",
-          warning: "Si usas etiquetas térmicas directas (sin ribbon), verifica que el modo de impresión en el driver esté configurado como 'Térmica Directa' y no 'Transferencia Térmica', de lo contrario marcará error de falta de ribbon."
+            "Conecta la impresora <strong>Zebra ZT411</strong> a la computadora mediante el <strong>cable USB</strong> (no por Wi-Fi) y enciéndela. Asegúrate de que el rollo de etiquetas y el ribbon estén bien colocados y alineados."
         },
         {
-          title: "2. Instalar el controlador oficial del fabricante",
+          title: "2. Agregar la impresora en Windows (ZDesigner ZT411-203dpi ZPL)",
           description:
-            'Ejecuta el instalador del driver (<span class="editable-placeholder">[EDITAR: Ej. Zebra Setup Utilities / ZDesigner v5 o v8]</span>) con privilegios de administrador. Selecciona el puerto USB (ej. <code>USB001</code>) o puerto TCP/IP con la IP fija asignada.'
+            "Abre <strong>Configuración &gt; Bluetooth y dispositivos &gt; Impresoras y escáneres</strong>. Si Windows no la agrega automáticamente al conectar el USB, haz clic en <strong>Agregar dispositivo</strong> (o instala el driver ZDesigner seleccionando el puerto <code>USB00x</code> correspondiente) hasta que aparezca como <strong>ZDesigner ZT411-203dpi ZPL</strong>."
         },
         {
-          title: "3. Configurar dimensiones exactas de la etiqueta",
+          title: "3. Abrir Valores de impresión desde Propiedades de la impresora",
           description:
-            'Ingresa a <strong>Propiedades de la impresora &gt; Preferencias de impresión &gt; Configuración de página</strong>. Define exactamente el ancho y alto de la etiqueta física en milímetros o pulgadas (ej. <span class="editable-placeholder">[EDITAR: Ej. 100mm x 50mm / 4" x 2"]</span>) y ajusta la velocidad/oscuridad (<em>Darkness</em>) a un nivel intermedio (ej. 10-15) para evitar etiquetas borrosas o quemadas.'
+            "Dentro de <strong>Impresoras y escáneres</strong>, selecciona la impresora <strong>ZDesigner ZT411-203dpi ZPL</strong> y entra a:<br><strong>Propiedades de la impresora &gt; Opciones avanzadas &gt; Valores de impresión...</strong>",
+          tip: "Configurar estos parámetros desde 'Opciones avanzadas > Valores de impresión' asegura que queden como valores predeterminados para todos los programas."
         },
         {
-          title: "4. Calibrar el sensor de etiquetas (Paso Crítico)",
+          title: "4. Configurar tamaño en Configuración de página",
           description:
-            "Para que la impresora no salte etiquetas ni imprima desfasado entre una y otra, ejecuta la calibración de medios desde las herramientas del driver (<em>Tools &gt; Action &gt; Calibrate media</em>) o manteniendo presionado el botón de <strong>Feed / Pause</strong> según el modelo hasta que parpadee 2 veces y avance de 2 a 4 etiquetas automáticamente.",
-          tip: "Guarda el perfil de configuración desde Zebra Setup Utilities para poder replicarlo en segundos si otra estación requiere la misma etiqueta."
+            "Dentro de la pestaña <strong>Configuración de página</strong>, ingresa exactamente las siguientes medidas:<br>&bull; <strong>Ancho:</strong> <code>104 mm</code><br>&bull; <strong>Alto:</strong> <code>50.8 mm</code>"
         },
         {
-          title: "5. Validar desde el software del usuario",
+          title: "5. Configurar velocidad, oscuridad y modo en Imprimir opciones",
           description:
-            'Envía una etiqueta real desde la aplicación utilizada en planta/almacén (<span class="editable-placeholder">[EDITAR: SAP / BarTender / Navegador / Excel]</span>) y comprueba que el código de barras sea legible con un escáner.'
+            "Cambia a la pestaña <strong>Imprimir opciones</strong> y ajusta los valores de la siguiente manera:<br>&bull; <strong>Velocidad:</strong> <code>152 mm/s</code><br>&bull; <strong>Oscuridad:</strong> <code>15</code><br>&bull; <strong>Modo de impresión:</strong> <code>Transferencia térmica</code><br><br>Haz clic en <strong>Aplicar</strong> y <strong>Aceptar</strong> para guardar la configuración, y realiza una impresión de prueba.",
+          warning: "Si el modo de impresión no está en 'Transferencia térmica' o falta el ribbon, las etiquetas saldrán en blanco o la impresora marcará error."
         }
       ],
       troubleshooting: [
-        "La impresora avanza 2 o 3 etiquetas en blanco y parpadea en rojo: falta calibrar el sensor o el tipo de sensor (Gap/Web vs Black Mark) no coincide con el rollo.",
-        "El texto sale cortado o muy pequeño desde el navegador/PDF: asegúrate de desactivar 'Ajustar a la página' y seleccionar el tamaño personalizado de la etiqueta en la ventana de impresión."
+        "Si las etiquetas salen con manchas o con una imagen incompleta, modifica la velocidad de impresión desde la ruta mencionada arriba (<strong>Propiedades de la impresora &gt; Opciones avanzadas &gt; Valores de impresión &gt; Imprimir opciones</strong>)."
       ]
     },
     {
@@ -508,7 +506,6 @@ Get-CimInstance Win32_Bios | Select-Object SerialNumber, SMBIOSBIOSVersion`
       summary:
         "Procedimiento para restaurar o reinstalar equipos corporativos utilizando la memoria USB booteable mediante F9 o el restablecimiento local del sistema mediante F11 (sin USB).",
       prerequisites: [
-        "Respaldo previo de la información del usuario (OneDrive / carpeta de respaldo) — ¡Restablecer o formatear borra archivos locales!",
         "Cargador conectado a la corriente eléctrica (obligatorio durante el proceso).",
         "Para restablecimiento con F11: contacto directo con el <strong>OSS Engineer</strong> por si el equipo solicita código de validación.",
         "Para booteo con F9: memoria USB booteable de soporte vigente."
@@ -538,13 +535,12 @@ Get-CimInstance Win32_Bios | Select-Object SerialNumber, SMBIOSBIOSVersion`
         {
           title: "4. Validación post-restablecimiento",
           description:
-            "Al finalizar la carga del sistema operativo, valida el inicio de sesión corporativo, la conexión a red/Zscaler, la instalación de <strong>Equitrac Client</strong> desde la tienda de aplicaciones corporativas y el cifrado BitLocker."
+            "Al finalizar la carga del sistema operativo, verifica únicamente que el equipo inicie correctamente con la <strong>imagen corporativa</strong>; el resto de la configuración inicial y aplicaciones lo completan los usuarios directamente."
         }
       ],
       troubleshooting: [
         "El restablecimiento con F11 pide un código y no avanza: envía de inmediato el número de serie y foto de pantalla al <strong>OSS Engineer</strong> para recibir el código correspondiente.",
-        "La memoria USB no aparece al presionar F9: prueba otro puerto USB, asegúrate de que la USB esté preparada en formato UEFI/GPT y revisa en BIOS si el arranque por USB está habilitado.",
-        "No detecta el disco duro NVMe durante instalación desde USB: valida si la imagen USB incluye el controlador de almacenamiento (Intel RST / VMD) del modelo."
+        "La memoria USB no aparece al presionar F9: prueba otro puerto USB, asegúrate de que la USB esté preparada en formato UEFI/GPT y revisa en BIOS si el arranque por USB está habilitado."
       ]
     },
     {
@@ -650,36 +646,35 @@ Get-CimInstance Win32_Bios | Select-Object SerialNumber, SMBIOSBIOSVersion`
       summary:
         "Proceso completo de logística en IS&T: cómo solicitar guías para enviar equipos de forma segura y cómo recibir, verificar activos y reportar llegadas a los IS&T Project Managers.",
       prerequisites: [
-        "Para envíos salientes: datos completos del destinatario (nombre, teléfono, correo y dirección completa), centro de costos (<span class=\"editable-placeholder\">[EDITAR: Centro de Costos / Código de Proyecto]</span>) y visto bueno del <strong>Local Operations Specialist</strong> si es urgente.",
-        "Para recepción de equipos: guía o referencia de compra/proyecto y lista esperada de activos proporcionada por los <strong>IS&amp;T Project Managers</strong>.",
-        "Material de embalaje (caja, plástico burbuja/espuma) y acceso a la carpeta o hoja de control de inventario."
+        "Para envíos salientes: datos completos del destinatario (nombre, teléfono, correo y dirección completa) y consultar la <strong>plantilla para solicitud de guías de envío</strong> (<code>05-Plantillas-Formatos/</code>) para reunir el resto de la información necesaria.",
+        "Para recepción de equipos: no se requiere información previa; únicamente recibir, verificar y reportar lo que llegue por paquetería.",
+        "Material de embalaje disponible y compromiso de registrar todos los equipos enviados para mantener control y evitar problemas."
       ],
       steps: [
         {
           title: "1. Envío saliente — Empacar el equipo de forma segura y tomar evidencias",
           description:
-            "Envuelve la laptop/equipo con suficiente hule burbuja o insertos de cartón protector para que no se mueva dentro de la caja. Incluye el cargador separado en una bolsa y agrega una hoja impresa dentro con el número de ticket y destinatario. <strong>Toma foto</strong> del número de serie/asset tag antes de cerrar la caja."
+            "Realiza un correcto embalaje para proteger el equipo durante el traslado e incluye su <strong>cargador</strong>. <strong>Toma foto</strong> del número de serie / asset tag antes de cerrar la caja."
         },
         {
-          title: "2. Envío saliente — Medir, pesar y solicitar la guía",
+          title: "2. Envío saliente — Medir, pesar y solicitar la guía por correo",
           description:
-            'Anota peso (kg) y dimensiones (L x A x H cm). Ingresa a <span class="editable-placeholder">[EDITAR: Portal de Paquetería (DHL/FedEx) o contacto interno de Logística]</span> con remitente Alstom (<span class="editable-placeholder">[EDITAR: Dirección del Sitio]</span>), datos del destinatario, centro de costos y número de ticket. Si tienes dudas sobre el tipo de envío, valida con el <strong>Local Operations Specialist</strong> o el <strong>OSS Engineer</strong>.',
-          tip: "Para envíos de equipos con batería de litio (laptops), recuerda declarar que contiene batería instalada en equipo (UN3481) si el formato de la paquetería lo solicita."
+            "Anota el peso (kg) y las dimensiones de la caja (L x A x H cm). Envía todos los datos del envío por correo a la persona encargada actualmente de gestionar las guías (si no sabes quién es, pregúntale al <strong>OSS Engineer</strong>)."
         },
         {
           title: "3. Envío saliente — Pegar guía, entregar y registrar rastreo",
           description:
-            "Imprime la guía y pégala en una cara plana y visible de la caja sin cubrir códigos de barras con cinta opaca. Registra el <strong>Número de Rastreo (Tracking Number)</strong> en el ticket del usuario y en el control de inventario."
+            "Imprime la guía y pégala en una cara plana y visible de la caja sin cubrir códigos de barras con cinta opaca. Registra el <strong>Número de Rastreo (Tracking Number)</strong> en el ticket del usuario y en el control de equipos enviados."
         },
         {
           title: "4. Recepción de paquetería — Verificar activos y reportar a IS&T Project Managers",
           description:
-            'Cuando lleguen cajas de hardware o infraestructura para proyectos del área:<br>1. Inspecciona el estado físico externo antes de firmar o recibir (si llega golpeada o abierta, toma fotos al instante).<br>2. Abre y verifica cantidad, modelo, <strong>número de serie (S/N)</strong>, <strong>Asset Tag</strong> y accesorios completos contra la orden o lista del proyecto.<br>3. Resguarda los equipos en bodega/zona asignada y envía el reporte de confirmación (listado de series + fotos/evidencia si aplica) a los <strong>IS&amp;T Project Managers</strong> responsables.',
+            'Cuando lleguen cajas de hardware o infraestructura para proyectos del área:<br>1. Inspecciona el estado físico externo antes de firmar o recibir (si llega golpeada o abierta, toma fotos al instante).<br>2. Abre y verifica cantidad, modelo, <strong>número de serie (S/N)</strong>, <strong>Asset Tag</strong> y accesorios completos.<br>3. Resguarda los equipos en bodega/zona asignada y envía el reporte de confirmación (listado de series + fotos/evidencia si aplica) a los <strong>IS&amp;T Project Managers</strong> responsables.',
           warning: "Nunca mezcles equipos recién llegados de un proyecto de infraestructura con el stock de soporte diario del OSS Engineer sin antes confirmar su recepción y asignación con los IS&T Project Managers."
         }
       ],
       troubleshooting: [
-        "La paquetería no recolectó un envío saliente a tiempo: verifica en recepción/vigilancia si el paquete quedó en zona de salida antes de la hora de corte (<span class=\"editable-placeholder\">[EDITAR: Ej. 2:00 PM]</span>).",
+        "La paquetería no recolectó un envío saliente en el día esperado: ten en cuenta que las recolecciones se realizan únicamente los <strong>lunes, miércoles y viernes</strong>; si no se recolecta a la hora indicada en alguno de esos días, espera al próximo día de recolección.",
         "Llega un paquete incompleto, dañado o sin saber a qué proyecto pertenece: documenta con fotos la guía y la etiqueta de la caja y consulta inmediatamente con los <strong>IS&amp;T Project Managers</strong> y el <strong>Local Operations Specialist</strong>."
       ]
     }
