@@ -128,7 +128,6 @@
     document.getElementById("backup-summary").textContent = backupRepo.summary;
     document.getElementById("backup-repo-slug").innerHTML = backupRepo.repoSlug;
     document.getElementById("backup-github-url").innerHTML = backupRepo.githubUrl;
-    document.getElementById("backup-cloud-url").innerHTML = backupRepo.cloudFolderUrl;
     document.getElementById("backup-local-path").innerHTML = backupRepo.localPath;
 
     const foldersGrid = document.getElementById("backup-folders-grid");

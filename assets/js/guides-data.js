@@ -127,51 +127,71 @@ window.HANDOVER_DATA = {
   ],
 
   /**
-   * Información sobre el repositorio de GitHub y/o carpeta compartida de respaldo.
+   * Información sobre el repositorio de GitHub y copia local de respaldo.
    */
   backupRepo: {
-    repoSlug: '<span class="editable-placeholder">[EDITAR: usuario-o-org/alstom-ist-respaldo]</span>',
-    githubUrl: '<span class="editable-placeholder">[EDITAR: https://github.com/usuario/repositorio-respaldo]</span>',
-    cloudFolderUrl: '<span class="editable-placeholder">[EDITAR: Enlace a Carpeta SharePoint / OneDrive IS&T]</span>',
-    localPath: '<span class="editable-placeholder">[EDITAR: \\\\servidor-local\\IST_Respaldo\\]</span>',
+    repoSlug:
+      '<a href="https://github.com/Tesla9750/Repositorio-Respaldo-Junio-Noviembre-2026" target="_blank" rel="noopener noreferrer" class="text-alstom-blue dark:text-sky-400 hover:underline">Tesla9750/Repositorio-Respaldo-Junio-Noviembre-2026</a>',
+    githubUrl:
+      'Repositorio privado &bull; Solicitar acceso por correo a: <a href="mailto:jdd_ben@hotmail.com" class="font-semibold text-alstom-blue dark:text-sky-400 hover:underline">jdd_ben@hotmail.com</a>',
+    localPath:
+      "No se cuenta con un servidor local dedicado, pero el área de IS&amp;T conserva una copia local de este mismo respaldo de GitHub.",
     summary:
-      "Durante mi periodo se consolidó un repositorio y carpeta estructurada con respaldos de actividades diarias, scripts de automatización, formatos administrativos, controladores verificados y guías internas para evitar retrabajos.",
+      "Durante mi periodo busco consolidar un repositorio y carpeta estructurada con respaldos de actividades diarias, scripts de automatización, formatos administrativos, controladores verificados y guías internas para evitar retrabajos.",
     folders: [
       {
-        name: "01-Scripts-Soporte/",
+        name: "01-Codigos-y-Scripts/",
         icon: "terminal",
         description:
-          "Scripts en PowerShell y Batch para tareas repetitivas: reinicio de cola de impresión (spooler), diagnóstico rápido de red, limpieza de caché y extracción de número de serie/BIOS."
+          "Códigos fuente y scripts de automatización desarrollados durante el periodo para agilizar tareas operativas."
       },
       {
-        name: "02-Documentacion-Procesos/",
-        icon: "book-open",
+        name: "02-Configuracion-Raspberry-Pi5/",
+        icon: "cpu",
         description:
-          "Manuales internos en PDF/Word, mapas de switches y nodos de red del sitio, instructivos internos y directorio privado de nombres y contactos asignados a cada rol."
+          "Documentación, comandos, archivos de configuración y respaldo de puesta en marcha para equipos Raspberry Pi 5."
       },
       {
-        name: "03-Plantillas-Formatos/",
+        name: "03-My-Voice-Kiosk-2026/",
+        icon: "monitor",
+        description:
+          "Archivos de seguimiento, respaldo de documentación del proyecto Kiosk My Voice 2026."
+      },
+      {
+        name: "04-Refresh-Telefonos-2026/",
+        icon: "smartphone",
+        description:
+          "Control y seguimiento del proceso de renovación/refresh de teléfonos corporativos 2026."
+      },
+      {
+        name: "05-Plantillas-Formatos/",
         icon: "file-spreadsheet",
         description:
-          "Formatos oficiales de entrega-recepción (responsivas de laptop, celular, monitores), checklist de bajas de personal y plantillas de correos."
+          "Formatos que apoyan en el proceso de envio-recepción, checklists y plantillas de apoyo."
       },
       {
-        name: "04-Drivers-Utilidades/",
-        icon: "hard-drive",
+        name: "06-Proyecto-Power-Automate/",
+        icon: "workflow",
         description:
-          "Controladores probados de impresoras de oficina y de etiquetas, herramientas portables de diagnóstico y utilidades de imagen USB."
+          "Flujos, documentación técnica y respaldos del proyecto de automatización en Microsoft Power Automate."
       },
       {
-        name: "05-Respaldo-Actividades/",
+        name: "07-Respaldo-Actividades/",
         icon: "archive",
         description:
-          "Evidencias, reportes mensuales de actividades realizadas durante la estancia, resúmenes de proyectos menores y notas de lecciones aprendidas."
+          "Reportes de actividades realizadas durante la estancia y otros documentos de utilidad."
+      },
+      {
+        name: "08-Gestion-Desechos-Electronicos-2026/",
+        icon: "trash-2",
+        description:
+          "Registros, listas de activos obsoletos/dañados y documentación de gestión de desechos electrónicos 2026."
       }
     ],
     keyDocuments: [
       {
         title: "Bitácora de Actividades y Tickets Frecuentes",
-        folder: "05-Respaldo-Actividades",
+        folder: "07-Respaldo-Actividades",
         format: "XLSX / MD",
         description:
           "Registro histórico de incidencias comunes en el sitio y cómo se resolvieron paso a paso.",
@@ -179,31 +199,23 @@ window.HANDOVER_DATA = {
       },
       {
         title: "Inventario de Equipos y Stock de Periféricos",
-        folder: "03-Plantillas-Formatos",
+        folder: "05-Plantillas-Formatos",
         format: "XLSX",
         description:
-          "Control de laptops disponibles en bodega, cargadores, mochilas, headsets y equipos en reparación.",
+          "Control de laptops disponibles en bodega, cargadores, maletines, dockings, teléfonos y equipos en resguardo.",
         updated: '<span class="editable-placeholder">[EDITAR: Mes/Año]</span>'
       },
       {
-        title: "Paquete de Drivers de Impresión y Etiquetas",
-        folder: "04-Drivers-Utilidades",
-        format: "ZIP / EXE",
+        title: "Scripts y Códigos de Soporte Operativo",
+        folder: "01-Codigos-y-Scripts",
+        format: "PS1 / PY / MD",
         description:
-          "Instaladores listos para usar sin perder tiempo buscando versiones compatibles en internet.",
-        updated: '<span class="editable-placeholder">[EDITAR: Mes/Año]</span>'
-      },
-      {
-        title: "Mapa de Red y Direccionamiento IP Local",
-        folder: "02-Documentacion-Procesos",
-        format: "PDF / Draw.io",
-        description:
-          "Referencia rápida de VLANs, IPs de impresoras fijas, relojes checadores y puntos de acceso.",
+          "Herramientas y scripts listos para automatizar consultas rápidas o tareas recurrentes de soporte.",
         updated: '<span class="editable-placeholder">[EDITAR: Mes/Año]</span>'
       },
       {
         title: "Directorio Privado de Roles y Contactos",
-        folder: "02-Documentacion-Procesos",
+        folder: "07-Respaldo-Actividades",
         format: "MD / XLSX",
         description:
           "Listado interno dentro del repositorio privado con los nombres, correos y extensiones asignados a cada rol de soporte y escalación.",
@@ -328,7 +340,7 @@ Get-CimInstance Win32_Bios | Select-Object SerialNumber, SMBIOSBIOSVersion`
         {
           title: "3. Verifica el flujo de entregas, bajas y envíos (Responsivas)",
           description:
-            'Nunca entregues o envíes una laptop, teléfono corporativo, docking, maletín, monitor o cargador sin validar sus accesorios físicos, registrarlo en el control de inventario y generar su responsiva en <span class="editable-placeholder">[EDITAR: Carpeta 03-Plantillas-Formatos / Portal de Activos]</span>.'
+            'Nunca entregues o envíes una laptop, teléfono corporativo, docking, maletín, monitor o cargador sin validar sus accesorios físicos, registrarlo en el control de inventario y generar su responsiva en <span class="editable-placeholder">[EDITAR: Carpeta 05-Plantillas-Formatos / Portal de Activos]</span>.'
         },
         {
           title: "4. Escala a tiempo cuando un problema salga de tu alcance",
@@ -406,7 +418,7 @@ Get-CimInstance Win32_Bios | Select-Object SerialNumber, SMBIOSBIOSVersion`
       prerequisites: [
         "Modelo exacto de impresora de etiquetas (<span class=\"editable-placeholder\">[EDITAR: Ej. Zebra ZD421 / ZT230 / GX420t]</span>).",
         "Rollo de etiquetas y Ribbon (si aplica impresión por transferencia térmica) correctamente colocados.",
-        "Driver oficial disponible en la carpeta <code>04-Drivers-Utilidades/</code>."
+        "Driver oficial disponible en el respaldo local del área o en el paquete de controladores."
       ],
       steps: [
         {
@@ -577,12 +589,11 @@ Get-CimInstance Win32_Bios | Select-Object SerialNumber, SMBIOSBIOSVersion`
           title: "2. Qué reportar si detectas un patrón de falla",
           description:
             "Toma nota del nombre/etiqueta del AP, ubicación física, puerto/switch en el rack (si lo conoces) y el patrón exacto del LED. Comparte esta información con el <strong>OSS Engineer</strong> o el equipo de Redes para revisión de puerto PoE, VLAN o WLC.",
-          warning: "No desconectes cables de patch panel ni presiones el botón físico Mode sin autorización del OSS Engineer, ya que un reset de fábrica borra la configuración del AP."
+          warning: "Nunca desconectes cables del switch sin autorización previa ni sin confirmar el puerto exacto, y evita presionar el botón físico Mode (un reset de fábrica borra la configuración del AP)."
         }
       ],
       troubleshooting: [
-        "El AP permanece más de 5 minutos en ciclo Verde - Rojo - Apagado: no alcanza al WLC (revisar enlace de red, DHCP o VLAN del puerto en el switch).",
-        "Ciclo Rojo - Apagado - Verde - Apagado - Azul - Apagado: valida que el switch entregue PoE+ (802.3at) y no únicamente PoE estándar (802.3af)."
+        "Reiniciar el Access Point desconectando y volviendo a conectar su cable de red directamente en el switch, siempre y cuando se notifique previamente, se cuente con autorización y se conozca el puerto exacto donde está conectado."
       ]
     },
     {
@@ -670,7 +681,7 @@ Get-CimInstance Win32_Bios | Select-Object SerialNumber, SMBIOSBIOSVersion`
     },
     {
       q: "¿Dónde guardo nuevos manuales o scripts que yo desarrolle?",
-      a: "Súbelos tanto a la carpeta compartida del área como al repositorio de respaldo en GitHub (siguiendo la estructura de carpetas 01 a 05) para mantener centralizada la documentación."
+      a: "Súbelos tanto a la copia local del área como al repositorio de respaldo en GitHub (siguiendo la estructura de carpetas 01 a 08) para mantener centralizada la documentación."
     },
     {
       q: "¿Cómo actualizo la información de esta página web?",

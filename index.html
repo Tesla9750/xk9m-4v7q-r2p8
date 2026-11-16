@@ -46,7 +46,7 @@
   <script src="https://unpkg.com/lucide@latest"></script>
 
   <!-- Custom Styles -->
-  <link rel="stylesheet" href="assets/css/styles.css?v=6" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=9" />
 </head>
 <body class="bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-100 antialiased transition-colors duration-200">
   <!-- Mobile Sidebar Overlay -->
@@ -360,7 +360,7 @@
                   <i data-lucide="folder-open" class="w-4 h-4"></i>
                 </span>
               </div>
-              <p id="stat-folders-count" class="text-2xl font-bold text-slate-900 dark:text-white mt-2">5</p>
+              <p id="stat-folders-count" class="text-2xl font-bold text-slate-900 dark:text-white mt-2">8</p>
               <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 group-hover:text-alstom-blue">
                 Scripts, formatos y manuales &rarr;
               </p>
@@ -477,30 +477,22 @@
           </div>
 
           <!-- Access Location Cards -->
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-4 space-y-1.5 shadow-sm">
               <div class="flex items-center gap-2 text-xs font-semibold text-slate-500 dark:text-slate-400">
-                <i data-lucide="github" class="w-4 h-4 text-slate-700 dark:text-slate-200"></i>
-                <span>Repositorio GitHub</span>
+                <i data-lucide="folder-git-2" class="w-4 h-4 text-alstom-blue dark:text-sky-400"></i>
+                <span>Repositorio GitHub (Privado)</span>
               </div>
               <p id="backup-repo-slug" class="text-sm font-mono font-medium text-slate-800 dark:text-slate-100 break-all"></p>
-              <p id="backup-github-url" class="text-xs text-slate-500 dark:text-slate-400 break-all"></p>
+              <p id="backup-github-url" class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed"></p>
             </div>
 
             <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-4 space-y-1.5 shadow-sm">
               <div class="flex items-center gap-2 text-xs font-semibold text-slate-500 dark:text-slate-400">
-                <i data-lucide="cloud" class="w-4 h-4 text-alstom-blue"></i>
-                <span>Carpeta en la Nube (SharePoint / OneDrive)</span>
+                <i data-lucide="hard-drive" class="w-4 h-4 text-emerald-600"></i>
+                <span>Respaldo Local en el Área</span>
               </div>
-              <p id="backup-cloud-url" class="text-sm font-medium text-slate-800 dark:text-slate-100 break-all"></p>
-            </div>
-
-            <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-4 space-y-1.5 shadow-sm">
-              <div class="flex items-center gap-2 text-xs font-semibold text-slate-500 dark:text-slate-400">
-                <i data-lucide="server" class="w-4 h-4 text-emerald-600"></i>
-                <span>Ruta Local / Servidor de Archivos</span>
-              </div>
-              <p id="backup-local-path" class="text-sm font-mono font-medium text-slate-800 dark:text-slate-100 break-all"></p>
+              <p id="backup-local-path" class="text-xs sm:text-sm font-medium text-slate-700 dark:text-slate-200 leading-relaxed"></p>
             </div>
           </div>
 
@@ -722,7 +714,7 @@
               Roles de Escalación y Preguntas Frecuentes
             </h2>
             <p class="text-sm text-slate-600 dark:text-slate-400 mt-1">
-              Por seguridad y privacidad al ser un sitio público en GitHub Pages, aquí se muestra únicamente el rol y su alcance. Los nombres, correos y extensiones asignados se encuentran dentro del repositorio privado de respaldo (<code class="font-mono text-xs">02-Documentacion-Procesos/</code>).
+              Por seguridad y privacidad al ser un sitio público en GitHub Pages, aquí se muestra únicamente el rol y su alcance. Los nombres, correos y extensiones asignados se encuentran dentro del repositorio privado de respaldo (<code class="font-mono text-xs">07-Respaldo-Actividades/</code>).
             </p>
           </div>
 
@@ -778,7 +770,7 @@
   </div>
 
   <!-- Data & Application Scripts -->
-  <script src="assets/js/guides-data.js?v=6"></script>
-  <script src="assets/js/app.js?v=6"></script>
+  <script src="assets/js/guides-data.js?v=9"></script>
+  <script src="assets/js/app.js?v=9"></script>
 </body>
 </html>
