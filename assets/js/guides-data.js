@@ -117,6 +117,14 @@ window.HANDOVER_DATA = {
       tag: "Logística"
     },
     {
+      id: "chk-13",
+      phase: "Mes 1",
+      title: "Aplicar el uso obligatorio de EPP y reglas de seguridad en naves de producción",
+      description:
+        "Contar con tu equipo completo (botas de protección, chaleco reflectante naranja, <em>bump cap</em>, tapones auditivos y lentes o cubrelentes) y aplicar las normas de tránsito seguro al cruzar las líneas amarillas hacia las naves.",
+      tag: "Seguridad & EPP"
+    },
+    {
       id: "chk-9",
       phase: "Mes 1",
       title: "Documentar nuevos hallazgos o mejoras",
