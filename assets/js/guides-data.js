@@ -716,7 +716,7 @@ dotnet user-secrets set "ConnectionStrings:DefaultConnection" "Server=.\\MONITOR
     },
     {
       q: "¿Qué hago si al reiniciar o bootear una PC me pide la clave de recuperación de BitLocker?",
-      a: 'No formatees de inmediato a menos que sea una reimagen aprobada. Consulta la clave de recuperación de 48 dígitos en <span class="editable-placeholder">[EDITAR: Portal de Intune / Active Directory / Administrador L2]</span> buscando por el Hostname o los primeros 8 caracteres del ID de clave.'
+      a: "No formatees el equipo. Toma los datos del equipo (Hostname, número de serie y/o el ID de clave que aparece en pantalla) y compártelos con el <strong>OSS Engineer</strong>; él te brindará la clave de recuperación de 48 dígitos, ya que como practicante no se tiene acceso a esa herramienta."
     },
     {
       q: "¿Dónde guardo nuevos manuales o scripts que yo desarrolle?",
